@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -27,6 +27,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#profile" class="active">프로필</a></li>
         <li><a href="#about">소개</a></li>
+        <li><a href="#notes">연기 노트</a></li>
         <li><a href="#career">연기 경력</a></li>
         <li><a href="#works">작품 활동</a></li>
         <li><a href="#gallery">갤러리</a></li>
@@ -140,6 +141,53 @@
         나이가 들어서도 무대 위에 서 있는 배우,<br>
         인생과 함께 계속 성장해가는 배우로 거듭나겠습니다.
       </p>
+    </div>
+  </section>
+
+  <!-- ===== Acting Notes Section ===== -->
+  <section class="section notes-section" id="notes">
+    <div class="section-header fade-in">
+      <span class="section-label">Acting Notes</span>
+      <h2 class="section-title">연기 노트</h2>
+      <p class="section-subtitle">연출가 선생님과의 1:1 수업 — 배우고, 기록하고, 다시 꺼내 봅니다</p>
+    </div>
+
+    <div class="notes-inner">
+      <div class="notes-philosophy fade-in">
+        <blockquote class="notes-quote">“연기는 기술이 아니라,<br>존재의 <em>훈련</em>이다.”</blockquote>
+        <p class="notes-philosophy-text">
+          반년의 기록을 관통하는 배움을 네 문장으로 정리했습니다.
+        </p>
+        <div class="about-values notes-pillars">
+          <div class="about-value fade-in">
+            <span class="about-value-num">01</span>
+            <h3 class="about-value-title">행위로서의 연기</h3>
+            <p class="about-value-desc">연기는 흉내가 아니라, 분명한 목적과 선택으로 관객에게 영향을 끼치는 '행위'다.</p>
+          </div>
+          <div class="about-value fade-in fade-in-delay-1">
+            <span class="about-value-num">02</span>
+            <h3 class="about-value-title">감정과 설계</h3>
+            <p class="about-value-desc">감정은 크되, 감정에 갇히지 않는다. 내가 우는 것이 아니라 배역이 울게 한다.</p>
+          </div>
+          <div class="about-value fade-in fade-in-delay-2">
+            <span class="about-value-num">03</span>
+            <h3 class="about-value-title">살아있는 연기</h3>
+            <p class="about-value-desc">기술 위에 반응을 얹는다. 자신에게 취하지 않고, 끝까지 상대를 본다.</p>
+          </div>
+          <div class="about-value fade-in fade-in-delay-3">
+            <span class="about-value-num">04</span>
+            <h3 class="about-value-title">호학(好學)</h3>
+            <p class="about-value-desc">재능보다 지속. 좋은 배우는 재능 있는 사람이 아니라, 변화할 수 있는 사람이다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes-grid" id="notesGrid">
+        <!-- Note cards injected by JS -->
+      </div>
+      <div class="notes-more-wrap fade-in">
+        <button class="notes-more-btn" id="notesMoreBtn">수업 노트 전체 보기</button>
+      </div>
     </div>
   </section>
 
@@ -346,6 +394,6 @@
     <p class="footer-text">© 2026 Teddy Choi. 늦게 시작했지만, 오래 하고 싶은 배우.</p>
   </footer>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>
