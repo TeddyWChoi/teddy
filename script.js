@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slug: 'murder',
       title: '머더',
       tag: '연극',
-      meta: '대학로 공연장 (예정) · 2026.11',
+      meta: '대학로 소극장 (예정) · 2026.11',
       caption: '창작연극 〈머더〉. 최강식 역으로 준비 중입니다. 2026년 11월, 대학로에서 만나요.',
       hashtags: '#머더 #창작연극 #대학로 #공연예정 #배우최테디',
       images: [

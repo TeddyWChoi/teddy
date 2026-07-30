@@ -607,6 +607,26 @@ a:hover {
   color: var(--color-bg);
 }
 
+/* Notes preview on main page */
+.notes-preview {
+  background: var(--color-bg);
+}
+
+.notes-preview .notes-quote {
+  text-align: center;
+  margin: 0 auto 2.5rem;
+  max-width: 700px;
+}
+
+a.note-card {
+  display: block;
+  color: inherit;
+}
+
+a.note-card:hover {
+  color: inherit;
+}
+
 /* Notes standalone page */
 .notes-page {
   padding-top: calc(64px + 4rem);

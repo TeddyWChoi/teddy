@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -27,11 +27,11 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#profile" class="active">프로필</a></li>
         <li><a href="#about">소개</a></li>
-        <li><a href="notes.html">연기 노트</a></li>
         <li><a href="#career">연기 경력</a></li>
         <li><a href="#works">작품 활동</a></li>
         <li><a href="#gallery">갤러리</a></li>
         <li><a href="#videos">영상</a></li>
+        <li><a href="#notes">연기 노트</a></li>
         <li><a href="#contact">연락처</a></li>
       </ul>
       <button class="nav-mobile-toggle" id="navToggle" aria-label="메뉴 열기">
@@ -142,9 +142,6 @@
         인생과 함께 계속 성장해가는 배우로 거듭나겠습니다.
       </p>
 
-      <div class="about-notes-cta-wrap fade-in fade-in-delay-3">
-        <a href="notes.html" class="about-notes-link">연기 노트 →</a>
-      </div>
     </div>
   </section>
 
@@ -159,7 +156,7 @@
       <div class="career-item fade-in">
         <span class="career-date">2026.11 (예정)</span>
         <h3 class="career-title">창작연극 &lt;머더&gt;</h3>
-        <p class="career-venue">대학로 공연장 (예정)</p>
+        <p class="career-venue">대학로 소극장 (예정)</p>
         <p class="career-role">최강식 역</p>
       </div>
       <div class="career-item fade-in">
@@ -321,6 +318,44 @@
     </div>
   </div>
 
+  <!-- ===== Acting Notes Preview Section ===== -->
+  <section class="section notes-section notes-preview" id="notes">
+    <div class="section-header fade-in">
+      <span class="section-label">Acting Notes</span>
+      <h2 class="section-title">연기 노트</h2>
+      <p class="section-subtitle">연출가 선생님과의 1:1 수업 — 배우고, 기록하고, 다시 꺼내 봅니다</p>
+    </div>
+
+    <div class="notes-inner">
+      <blockquote class="notes-quote fade-in">“연기는 기술이 아니라,<br>존재의 <em>훈련</em>이다.”</blockquote>
+
+      <div class="notes-grid">
+        <a href="notes.html" class="note-card fade-in">
+          <span class="note-date">2026.06.15</span>
+          <h3 class="note-title">결과가 아니라 과정</h3>
+          <p class="note-summary">예술의 가치는 완벽한 결과물이 아니라, 계속 만들어가는 과정에 있다. 좋은 배우란 재능 있는 사람이 아니라 변화할 수 있는 사람이다.</p>
+          <span class="note-open">자세히 보기 →</span>
+        </a>
+        <a href="notes.html" class="note-card fade-in fade-in-delay-1">
+          <span class="note-date">2026.06.10</span>
+          <h3 class="note-title">감정이 아니라 상호작용</h3>
+          <p class="note-summary">좋은 연기는 감정 속으로 침잠하는 것이 아니라, 감정을 가진 채 환경을 보고 듣고 반응하는 것이다.</p>
+          <span class="note-open">자세히 보기 →</span>
+        </a>
+        <a href="notes.html" class="note-card fade-in fade-in-delay-2">
+          <span class="note-date">2026.06.01</span>
+          <h3 class="note-title">연극이란 무엇인가</h3>
+          <p class="note-summary">연극의 본질은 '행동하는 자신을 관찰하는 능력'. 역할을 사는 이유는 타인을 이해하는 과정을 거쳐, 나를 더 깊이 이해하기 위해서다.</p>
+          <span class="note-open">자세히 보기 →</span>
+        </a>
+      </div>
+
+      <div class="notes-more-wrap fade-in">
+        <a href="notes.html" class="notes-more-btn">연기 노트 전체 보기 (23) →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== Contact Section ===== -->
   <section class="section contact-section" id="contact">
     <div class="section-header fade-in">
@@ -351,6 +386,6 @@
     <p class="footer-text">© 2026 Teddy Choi. 늦게 시작했지만, 오래 하고 싶은 배우.</p>
   </footer>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>
