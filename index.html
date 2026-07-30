@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -26,7 +26,9 @@
       <a href="#" class="nav-logo">최테디 <span>.</span></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#profile" class="active">프로필</a></li>
+        <li><a href="#about">소개</a></li>
         <li><a href="#career">연기 경력</a></li>
+        <li><a href="#works">작품 활동</a></li>
         <li><a href="#gallery">갤러리</a></li>
         <li><a href="#videos">영상</a></li>
         <li><a href="#contact">연락처</a></li>
@@ -48,6 +50,7 @@
       <div class="hero-content">
         <h1 class="hero-name-kr fade-in">최테디</h1>
         <p class="hero-name-en fade-in fade-in-delay-1">Teddy Choi</p>
+        <p class="hero-tagline fade-in fade-in-delay-1">어떤 역할이든 성실하게 —<br>주연보다 빛나는 조연을 꿈꾸는 배우</p>
         <div class="hero-divider fade-in fade-in-delay-2"></div>
 
         <div class="profile-info fade-in fade-in-delay-2">
@@ -57,7 +60,7 @@
           </div>
           <div class="profile-info-row">
             <span class="profile-info-label">키/몸무게</span>
-            <span class="profile-info-value">165cm / 61kg</span>
+            <span class="profile-info-value">165cm / 57kg</span>
           </div>
           <div class="profile-info-row">
             <span class="profile-info-label">학력</span>
@@ -92,6 +95,50 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section class="section about-section" id="about">
+    <div class="section-header fade-in">
+      <span class="section-label">About</span>
+      <h2 class="section-title">늦게 시작했지만, 오래 하고 싶습니다</h2>
+    </div>
+
+    <div class="about-inner">
+      <blockquote class="about-quote fade-in">
+        “배역의 크기보다,<br>무대 위의 <em>진심</em>을 욕심냅니다.”
+      </blockquote>
+
+      <p class="about-text fade-in fade-in-delay-1">
+        연기를 전공하지 않았고, 남들보다 늦게 시작했습니다.<br>
+        그래서 저에게 연기는 잠깐의 도전이 아니라, <strong>인생과 함께 걸어가는 길</strong>입니다.<br>
+        어떤 역할이 주어져도 그 인물로 성실하게 살아내는 것 —<br>
+        그것이 제가 생각하는 배우의 일입니다.
+      </p>
+
+      <div class="about-values">
+        <div class="about-value fade-in fade-in-delay-1">
+          <span class="about-value-num">01</span>
+          <h3 class="about-value-title">꾸준함</h3>
+          <p class="about-value-desc">늦게 시작한 만큼, 매일 성실하게 쌓아갑니다. 멈추지 않는 것이 저의 재능입니다.</p>
+        </div>
+        <div class="about-value fade-in fade-in-delay-2">
+          <span class="about-value-num">02</span>
+          <h3 class="about-value-title">어떤 역할이든</h3>
+          <p class="about-value-desc">큰 역할도, 작은 역할도 없습니다. 맡은 배역이 무엇이든 온 마음을 다해 그 인물로 살아냅니다.</p>
+        </div>
+        <div class="about-value fade-in fade-in-delay-3">
+          <span class="about-value-num">03</span>
+          <h3 class="about-value-title">빛나는 조연</h3>
+          <p class="about-value-desc">주연보다 빛나는 조연. 작품을 단단하게 받쳐주는 배우가 되고 싶습니다.</p>
+        </div>
+      </div>
+
+      <p class="about-closing fade-in fade-in-delay-3">
+        나이가 들어서도 무대 위에 서 있는 배우,<br>
+        인생과 함께 계속 성장해가는 배우로 거듭나겠습니다.
+      </p>
     </div>
   </section>
 
@@ -161,6 +208,19 @@
     </div>
   </section>
 
+  <!-- ===== Works Section (Instagram-style feed) ===== -->
+  <section class="section works-section" id="works">
+    <div class="section-header fade-in">
+      <span class="section-label">Works</span>
+      <h2 class="section-title">작품 활동</h2>
+      <p class="section-subtitle">무대 위의 순간들을 기록합니다 · <a href="https://www.instagram.com/teddy.w.choi/" target="_blank" rel="noopener">@teddy.w.choi</a></p>
+    </div>
+
+    <div class="works-feed" id="worksFeed">
+      <!-- Instagram-style cards injected by JS -->
+    </div>
+  </section>
+
   <!-- ===== Gallery Section ===== -->
   <section class="section gallery-section" id="gallery">
     <div class="section-header fade-in">
@@ -217,6 +277,7 @@
     <div class="section-header fade-in">
       <span class="section-label">Showreel</span>
       <h2 class="section-title">영상</h2>
+      <p class="section-subtitle">프로필 · 연기 영상 · 공연 실황</p>
     </div>
 
     <div class="video-slider-wrapper">
@@ -267,7 +328,11 @@
     </div>
   </section>
 
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p class="footer-text">© 2026 Teddy Choi. 늦게 시작했지만, 오래 하고 싶은 배우.</p>
+  </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
