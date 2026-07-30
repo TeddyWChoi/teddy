@@ -214,61 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
     heart.addEventListener('click', () => heart.classList.toggle('liked'));
   });
 
-  // ——— Acting Notes Data (acting/ 폴더의 1:1 수업 PDF 요약) ———
-  const actingNotes = [
-    { date: '2026.01.17', title: '연기란? (OT)', summary: '연기는 단순한 움직임이 아니라, 분명한 목적과 선택으로 관객에게 영향을 끼치는 \'행위\'다. 예술은 인간의 유한함에 대한 자각에서 시작된다.', quote: '나는 죽지만, 내 작품은 남는다.' },
-    { date: '2026.01.24', title: '연기의 단상 & 방법론', summary: '연기는 수단과 목적이 일치하는 \'놀이\'여야 한다. 감정을 직접 재현하려 하기보다, 반복 가능한 행위를 설계할 때 감정이 따라온다.', quote: '감정은 믿지 말고, 행위를 설계하라.' },
-    { date: '2026.01.31', title: '낯설게 하기', summary: '익숙한 세계를 새롭게 바라보는 태도가 창조의 출발점. 재능은 그릇일 뿐, 예술은 결핍이 있는 평범한 사람들이 하는 것이다.', quote: '창조의 과정 그 자체가 예술이다.' },
-    { date: '2026.02.07', title: '배우와 행동의 본질', summary: '배우(actor)란 행동하는 사람. 인간은 행동에 의미를 부여할 수 있는 유일한 존재이며, 예술은 사실의 흐름에 브레이크를 거는 일이다.', quote: '그래서 돈이 안 된다. 그래서 불편하다. 그래서 필요하다.' },
-    { date: '2026.02.14', title: '감정의 중요성', summary: '살아있다는 것은 감정을 느낀다는 것. 배우는 사회화 속에 죽어가는 감정을 깨워, 타인과 세계로 확장시키는 사람이다.', quote: '예술가는 자신의 감정을 무한히 관객에게 확장시키는 사람이다.' },
-    { date: '2026.02.21', title: '감정파 vs 이지파', summary: '무대 위의 감정은 날것의 배설이 아니라 사유를 거쳐 승화된 \'기억된 감정\'. 내가 우는 것이 아니라 배역이 울게 한다.', quote: '감정이 크되, 감정에 갇히지 않는 상태 — 그것이 예술적 슬픔이다.' },
-    { date: '2026.03.01', title: '태도, 객관화, 장인정신', summary: '욕심 없는 꾸준함으로 기회를 대하고, 장인처럼 반복과 축적을 견딘다. 연기는 말이 아닌 설득력으로 관객을 움직이는 일이다.' },
-    { date: '2026.03.07', title: '습관, 아우라, 자발적 가난', summary: '습관은 우리를 현재로부터 분리시킨다. 아우라는 습관을 걷어내고 지금 여기에 머무는 사람에게서 나온다.', quote: '습관은 기술을 만들지만, 생각은 영혼의 빛을 만든다.' },
-    { date: '2026.03.14', title: '신화, 고통, 기호와 매력', summary: '신화라는 포장지를 걷어내야 현실의 나와 마주할 수 있다. 고통은 묘사하는 순간, 나를 짓누르는 것이 아닌 \'대상\'이 된다.', quote: '진실의 가장 큰 적은 끈질기고 그럴듯한 신화다.' },
-    { date: '2026.03.21', title: '사랑, 캐릭터, 허구', summary: '캐릭터는 말이 아니라 결정적 순간의 선택과 행동으로 드러난다. 허구는 거짓이 아니라, 현실의 본질을 더 깊게 보여주는 재구성이다.', quote: '연극의 진실은 사실이 아니라 허구 속에 있다.' },
-    { date: '2026.03.28', title: '예술, 묘사, 영원성', summary: '예술가와 일반인의 차이는 감각이 아니라, 그 감각을 정리해 \'묘사\'하는 능력에 있다.', quote: '꽃이 져도 상관없다. 그 꽃을 본 감정이 내 안에 남아 있으면 된다.' },
-    { date: '2026.04.04', title: '호학(好學)', summary: '배우는 자기 자신을 도구로 쓰는 예술가. 배우는 것을 좋아하는 \'호학\'의 태도로 평생을 바라본다.', quote: '좋아하는 마음 + 기술 + 구조 + 경험, 이 네 가지가 균형 잡혀야 진짜 배우다.' },
-    { date: '2026.04.11', title: '살아있는 연기', summary: '대사와 동선을 완벽히 수행하는 \'잘하는 연기\'를 넘어, 매 순간 인물로서 반응하는 \'살아있는 연기\'로. 기본기 위에 선 즉흥만이 살아 있다.', quote: '기술은 배우를 만들고, 질문은 진짜 배우를 만든다.' },
-    { date: '2026.04.18', title: '무의식을 의식으로', summary: '연기란 일상의 무의식적 행위를 무대 위 의식적·미학적 표현으로 바꾸는 작업이다.', quote: '배우는 표현의 수단이 자기 자신인 유일한 예술가다.' },
-    { date: '2026.05.03', title: '현상과 본질, 역지사지', summary: '경험의 나열은 현상일 뿐, 그 속에서 본질을 찾아야 작품이 된다. 연극은 타인이 되어 나를 발견하는 역지사지의 예술이다.', quote: '나는 나를 못 보지만, 타인을 통해 나를 비춰볼 수 있다.' },
-    { date: '2026.05.09', title: '좋아하는 세계', summary: '연기를 성과를 계산하는 직업이 아니라, 시간과 돈이 아깝지 않은 \'좋아하는 세계\'로. 배우는 나를 드러내는 사람이 아니라, 나를 숨기고 역할을 살리는 사람이다.', quote: '이 예술을 위해 나는 무엇을 희생할 수 있는가?' },
-    { date: '2026.05.17', title: '무문관(無門關)', summary: '자유는 얻는 것이 아니라 쟁취하는 것. 자유를 막는 것은 외부의 억압이 아니라 내 안의 집착이다.', quote: '문이 없으면 그냥 지나가면 된다.' },
-    { date: '2026.05.23', title: '서브텍스트와 겪음', summary: '연기는 겉말 아래 숨은 서브텍스트와 삶 전체의 맥락을 읽어 표현하는 일. 몸으로 겪는 예술이기에 AI가 대체하기 어렵다.' },
-    { date: '2026.05.30', title: '무대 위의 나, 일상의 나', summary: '무대 위의 빛나는 나와 일상의 평범한 나 사이의 괴리는 통과의례. 초라한 나까지 인정할 때 연극을 오래 할 수 있다.' },
-    { date: '2026.06.01', title: '연극이란 무엇인가', summary: '연극의 본질은 \'행동하는 자신을 관찰하는 능력\'. 역할을 사는 이유는 타인을 이해하는 과정을 거쳐, 나를 더 깊이 이해하기 위해서다.' },
-    { date: '2026.06.10', title: '감정이 아니라 상호작용', summary: '좋은 연기는 감정 속으로 침잠하는 것이 아니라, 감정을 가진 채 환경을 보고 듣고 반응하는 것이다.', quote: '마음은 한 곳에 머물면 얼어붙는다. 외부와 만나야 살아 움직인다.' },
-    { date: '2026.06.15', title: '결과가 아니라 과정', summary: '예술의 가치는 완벽한 결과물이 아니라, 계속 만들어가는 과정에 있다. 좋은 배우란 재능 있는 사람이 아니라 변화할 수 있는 사람이다.', quote: '\'나는 아직 부족하다\'는 사실을 인정하면서도 포기하지 않는 태도.' },
-    { date: '부록', title: '연기가 다른 예술과 다른 점', summary: '연기는 배우 자신의 몸·목소리·기억이 곧 도구가 되어, 타인을 살아내는 관계의 예술이다.', quote: '배우는 자신에게 취하지 않고, 끝까지 상대를 본다.' },
-  ];
-
-  // ——— Render Acting Notes ———
-  const notesGrid = document.getElementById('notesGrid');
-  const notesMoreBtn = document.getElementById('notesMoreBtn');
-  const NOTES_PREVIEW_COUNT = 6;
-
-  actingNotes.forEach((note, i) => {
-    const card = document.createElement('article');
-    card.className = 'note-card' + (i >= NOTES_PREVIEW_COUNT ? ' note-hidden' : '');
-    card.innerHTML = `
-      <span class="note-date">${note.date}</span>
-      <h3 class="note-title">${note.title}</h3>
-      <p class="note-summary">${note.summary}</p>
-      ${note.quote ? `<p class="note-quote">“${note.quote}”</p>` : ''}
-    `;
-    notesGrid.appendChild(card);
-  });
-
-  let notesExpanded = false;
-  notesMoreBtn.textContent = `수업 노트 전체 보기 (${actingNotes.length})`;
-  notesMoreBtn.addEventListener('click', () => {
-    notesExpanded = !notesExpanded;
-    notesGrid.querySelectorAll('.note-card').forEach((card, i) => {
-      if (i >= NOTES_PREVIEW_COUNT) card.classList.toggle('note-hidden', !notesExpanded);
-    });
-    notesMoreBtn.textContent = notesExpanded ? '접기' : `수업 노트 전체 보기 (${actingNotes.length})`;
-    if (!notesExpanded) document.getElementById('notes').scrollIntoView({ behavior: 'smooth' });
-  });
-
   // ——— Video Data ———
   // vertical: true 인 항목은 세로(9:16) 영상 — 재생 팝업이 세로 비율로 열립니다.
   // thumb가 있으면 로컬 썸네일을, 없으면 YouTube 썸네일을 사용합니다.

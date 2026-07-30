@@ -607,6 +607,160 @@ a:hover {
   color: var(--color-bg);
 }
 
+/* Notes standalone page */
+.notes-page {
+  padding-top: calc(64px + 4rem);
+  min-height: 100vh;
+}
+
+.note-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.note-open {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  opacity: 0.75;
+  transition: opacity var(--transition-fast);
+}
+
+.note-card:hover .note-open {
+  opacity: 1;
+}
+
+/* About 섹션의 연기 노트 CTA */
+.about-notes-cta-wrap {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.about-notes-cta {
+  display: inline-block;
+}
+
+/* Note Detail Modal */
+.note-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-medium);
+}
+
+.note-modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.note-modal-panel {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-hover);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2.5rem 2.75rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.note-modal-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: var(--color-text-primary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  z-index: 1;
+}
+
+.note-modal-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.note-modal-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.4rem 0 1.5rem;
+  line-height: 1.4;
+}
+
+.note-modal-body {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.9;
+}
+
+.note-modal-body p {
+  margin-bottom: 1.1rem;
+}
+
+.note-modal-body h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 1.75rem 0 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--color-accent);
+}
+
+.note-modal-body ul {
+  margin: 0 0 1.1rem 1.2rem;
+}
+
+.note-modal-body li {
+  margin-bottom: 0.4rem;
+}
+
+.note-modal-body strong {
+  color: var(--color-accent-light);
+  font-weight: 600;
+}
+
+.note-modal-body blockquote {
+  margin: 1.75rem 0 0.5rem;
+  padding: 1.1rem 1.4rem;
+  background: rgba(200, 168, 110, 0.07);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-accent-light);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .note-modal {
+    padding: 1rem;
+  }
+
+  .note-modal-panel {
+    padding: 1.75rem 1.5rem 2rem;
+    max-height: 90vh;
+  }
+}
+
 /* ===== Career Section ===== */
 .career-section {
   background: var(--color-bg-elevated);
