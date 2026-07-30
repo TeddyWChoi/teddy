@@ -5,6 +5,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // 이미지: images/works/<slug>/ 폴더. fit: 'contain'은 크롭하면 안 되는 컷(포스터·가로 사진)에 지정.
   const works = [
     {
+      slug: 'murder',
+      title: '머더',
+      tag: '연극',
+      meta: '대학로 공연장 (예정) · 2026.11',
+      caption: '창작연극 〈머더〉. 최강식 역으로 준비 중입니다. 2026년 11월, 대학로에서 만나요.',
+      hashtags: '#머더 #창작연극 #대학로 #공연예정 #배우최테디',
+      images: [
+        { src: 'images/works/murder/murder_01.jpg' },
+      ],
+    },
+    {
+      slug: 'last-rehearsal',
+      title: '마지막 리허설',
+      tag: '낭독극',
+      meta: '부암아트홀 · 2026.07',
+      caption: '틔움 리딩 페스티벌 낭독극 〈마지막 리허설〉. 최청년 역. 목소리와 호흡만으로 쌓아 올린 무대였습니다.',
+      hashtags: '#마지막리허설 #낭독극 #부암아트홀 #틔움리딩페스티벌 #배우최테디',
+      images: [
+        { src: 'images/works/last-rehearsal/rehearsal_01.jpg' },
+        { src: 'images/works/last-rehearsal/rehearsal_02.jpg' },
+        { src: 'images/works/last-rehearsal/rehearsal_03.jpg', fit: 'contain' },
+        { src: 'images/works/last-rehearsal/rehearsal_04.jpg', fit: 'contain' },
+        { src: 'images/works/last-rehearsal/rehearsal_05.jpg', fit: 'contain' },
+        { src: 'images/works/last-rehearsal/rehearsal_06.jpg' },
+        { src: 'images/works/last-rehearsal/rehearsal_07.jpg' },
+        { src: 'images/works/last-rehearsal/rehearsal_08.jpg' },
+        { src: 'images/works/last-rehearsal/rehearsal_09.jpg' },
+        { src: 'images/works/last-rehearsal/rehearsal_10.jpg' },
+      ],
+    },
+    {
       slug: 'showman',
       title: '위대한쇼맨',
       tag: '뮤지컬',
@@ -82,6 +113,17 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'images/works/busking/busking_01.jpg' },
         { src: 'images/works/busking/busking_02.jpg' },
         { src: 'images/works/busking/busking_03.jpg' },
+      ],
+    },
+    {
+      slug: 'fitness',
+      title: '피트니스',
+      tag: '트레이닝',
+      meta: '바디 프로필 준비 중 · Ongoing',
+      caption: '배우의 몸도 연기의 일부라고 생각합니다. 헬스·수영·클라이밍·복싱으로 매일 단련 중. 바디 프로필로 곧 인사드릴게요.',
+      hashtags: '#피트니스 #운동하는배우 #바디프로필준비중 #배우최테디',
+      images: [
+        { src: 'images/works/fitness/fitness_01.jpg' },
       ],
     },
   ];
