@@ -632,14 +632,27 @@ a:hover {
   opacity: 1;
 }
 
-/* About 섹션의 연기 노트 CTA */
+/* About 섹션의 연기 노트 링크 */
 .about-notes-cta-wrap {
   text-align: center;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
-.about-notes-cta {
+.about-notes-link {
   display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  border-bottom: 1px solid rgba(200, 168, 110, 0.4);
+  padding-bottom: 2px;
+  transition: all var(--transition-fast);
+}
+
+.about-notes-link:hover {
+  color: var(--color-accent-light);
+  border-color: var(--color-accent-light);
 }
 
 /* Note Detail Modal */
@@ -1649,7 +1662,7 @@ a:hover {
   }
 
   .notes-pillars {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .notes-grid {
