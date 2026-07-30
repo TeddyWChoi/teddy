@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: '민주의 물결',
       tag: '춤극',
       meta: '남영동 민주화운동기념관 · 2025.08',
-      caption: '도튼슨 〈민주의 물결〉. 몸으로 기록한 역사. 단체 춤극의 연기와 안무로 함께했습니다.',
+      caption: '도슨트 공연 〈민주의 물결〉. 몸으로 기록한 역사. 단체 춤극의 연기와 안무로 함께했습니다.',
       hashtags: '#민주의물결 #춤극 #민주화운동기념관 #배우최테디',
       images: [
         { src: 'images/works/democracy-wave/democracy_01.jpg' },
