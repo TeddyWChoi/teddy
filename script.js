@@ -266,7 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: '-Ipztn-Vzn8', title: '뮤지컬 〈위대한쇼맨〉 1', thumb: 'images/videos/showman_v1.jpg', vertical: true, cat: 'performance' },
     { id: 'iNCWBP-FvDs', title: '뮤지컬 〈위대한쇼맨〉 2', thumb: 'images/videos/showman_v2.jpg', vertical: true, cat: 'performance' },
     { id: '-KqjyeiKjnE', title: '뮤지컬 〈위대한쇼맨〉 3', thumb: 'images/videos/showman_v3.jpg', vertical: true, cat: 'performance' },
-    { id: 'UQewbcSgNGk', title: '뮤지컬 〈위대한쇼맨〉 4', thumb: 'images/videos/showman_v4.jpg', vertical: true, cat: 'performance' },
     { id: 'eJluQn76dAc', title: '연극 〈처녀비행〉 쇼츠 1', thumb: 'images/videos/maiden_v1.jpg', vertical: true, cat: 'performance' },
     { id: 'QIk_zbrwEKA', title: '연극 〈처녀비행〉 쇼츠 2', thumb: 'images/videos/maiden_v2.jpg', vertical: true, cat: 'performance' },
     { id: 'dy-xvHwYo90', title: '춤극 〈민주의 물결〉 쇼츠', thumb: 'images/videos/democracy_v1.jpg', vertical: true, cat: 'performance' },
