@@ -253,28 +253,29 @@ document.addEventListener('DOMContentLoaded', () => {
   // ——— Video Data ———
   // vertical: true 인 항목은 세로(9:16) 영상 — 재생 팝업이 세로 비율로 열립니다.
   // thumb가 있으면 로컬 썸네일을, 없으면 YouTube 썸네일을 사용합니다.
+  // cat: performance(공연) | song(노래) | monologue(독백) | always(모든 필터에 표시)
   const videos = [
-    { id: '32RERk4sk5s', title: '최테디 배우프로필' },
-    { id: 'V0yeLhbxzK0', title: '독백 연기 ‘정답을 아는 자’' },
-    { id: 'irnGozPnrBA', title: '독백 연기 ‘복수는 나의 것’' },
-    { id: '97eFPh6RAwE', title: '연기 영상 3' },
-    { id: 'vjDFHS9h16k', title: '연기 영상 4' },
-    { id: '1lYjtmGeOJs', title: '연기 영상 5' },
-    { id: '69J0dJs5JyE', title: '연기 영상 6' },
-    { id: 'DfKUz75Na84', title: '연기 영상 7' },
-    { id: '-Ipztn-Vzn8', title: '뮤지컬 〈위대한쇼맨〉 공연 실황 1', thumb: 'images/videos/showman_v1.jpg', vertical: true },
-    { id: 'iNCWBP-FvDs', title: '뮤지컬 〈위대한쇼맨〉 공연 실황 2', thumb: 'images/videos/showman_v2.jpg', vertical: true },
-    { id: '-KqjyeiKjnE', title: '뮤지컬 〈위대한쇼맨〉 공연 실황 3', thumb: 'images/videos/showman_v3.jpg', vertical: true },
-    { id: 'UQewbcSgNGk', title: '뮤지컬 〈위대한쇼맨〉 공연 실황 4', thumb: 'images/videos/showman_v4.jpg', vertical: true },
-    { id: 'eJluQn76dAc', title: '연극 〈처녀비행〉 공연 실황 1', thumb: 'images/videos/maiden_v1.jpg', vertical: true },
-    { id: 'QIk_zbrwEKA', title: '연극 〈처녀비행〉 공연 실황 2', thumb: 'images/videos/maiden_v2.jpg', vertical: true },
-    { id: 'dy-xvHwYo90', title: '춤극 〈민주의 물결〉 공연 실황', thumb: 'images/videos/democracy_v1.jpg', vertical: true },
-    { id: 'cAMU9yv-Xt8', title: '버스킹 라이브 1', thumb: 'images/videos/busking_v1.jpg', vertical: true },
-    { id: 'nZS97Y-7JzU', title: '버스킹 라이브 2', thumb: 'images/videos/busking_v2.jpg', vertical: true },
-    { id: 'oyYpFwCnac0', title: '버스킹 라이브 3', thumb: 'images/videos/busking_v3.jpg', vertical: true },
-    { id: '3ZNDpqvuOs0', title: '정기연주회 〈여명〉 라이브 1', thumb: 'images/videos/hongdae_v1.jpg', vertical: true },
-    { id: 'CSbxqIOsVBw', title: '정기연주회 〈여명〉 라이브 2', thumb: 'images/videos/hongdae_v2.jpg', vertical: true },
-    { id: 'YSwKubSrC5Y', title: '정기연주회 〈여명〉 라이브 3', thumb: 'images/videos/hongdae_v3.jpg', vertical: true },
+    { id: '32RERk4sk5s', title: '최테디 배우프로필', cat: 'always' },
+    { id: 'V0yeLhbxzK0', title: '독백 연기 ‘정답을 아는 자’', cat: 'monologue' },
+    { id: '97eFPh6RAwE', title: '연극 〈처녀비행〉', cat: 'performance' },
+    { id: 'vjDFHS9h16k', title: '춤극 〈민주의 물결〉 편집본', cat: 'performance' },
+    { id: '1lYjtmGeOJs', title: '비와당신 (풀버전)', cat: 'song' },
+    { id: '69J0dJs5JyE', title: '빵빵한내청춘 (풀버전)', cat: 'song' },
+    { id: 'DfKUz75Na84', title: '사람이 꽃보다 아름다워 (풀버전)', cat: 'song' },
+    { id: 'irnGozPnrBA', title: '독백 연기 ‘복수는 나의 것’', cat: 'monologue' },
+    { id: '-Ipztn-Vzn8', title: '뮤지컬 〈위대한쇼맨〉 1', thumb: 'images/videos/showman_v1.jpg', vertical: true, cat: 'performance' },
+    { id: 'iNCWBP-FvDs', title: '뮤지컬 〈위대한쇼맨〉 2', thumb: 'images/videos/showman_v2.jpg', vertical: true, cat: 'performance' },
+    { id: '-KqjyeiKjnE', title: '뮤지컬 〈위대한쇼맨〉 3', thumb: 'images/videos/showman_v3.jpg', vertical: true, cat: 'performance' },
+    { id: 'UQewbcSgNGk', title: '뮤지컬 〈위대한쇼맨〉 4', thumb: 'images/videos/showman_v4.jpg', vertical: true, cat: 'performance' },
+    { id: 'eJluQn76dAc', title: '연극 〈처녀비행〉 쇼츠 1', thumb: 'images/videos/maiden_v1.jpg', vertical: true, cat: 'performance' },
+    { id: 'QIk_zbrwEKA', title: '연극 〈처녀비행〉 쇼츠 2', thumb: 'images/videos/maiden_v2.jpg', vertical: true, cat: 'performance' },
+    { id: 'dy-xvHwYo90', title: '춤극 〈민주의 물결〉 쇼츠', thumb: 'images/videos/democracy_v1.jpg', vertical: true, cat: 'performance' },
+    { id: 'cAMU9yv-Xt8', title: '버스킹 라이브 1', thumb: 'images/videos/busking_v1.jpg', vertical: true, cat: 'song' },
+    { id: 'nZS97Y-7JzU', title: '버스킹 라이브 2', thumb: 'images/videos/busking_v2.jpg', vertical: true, cat: 'song' },
+    { id: 'oyYpFwCnac0', title: '버스킹 라이브 3', thumb: 'images/videos/busking_v3.jpg', vertical: true, cat: 'song' },
+    { id: '3ZNDpqvuOs0', title: '정기연주회 〈여명〉 쇼츠 1', thumb: 'images/videos/hongdae_v1.jpg', vertical: true, cat: 'song' },
+    { id: 'CSbxqIOsVBw', title: '정기연주회 〈여명〉 쇼츠 2', thumb: 'images/videos/hongdae_v2.jpg', vertical: true, cat: 'song' },
+    { id: 'YSwKubSrC5Y', title: '정기연주회 〈여명〉 쇼츠 3', thumb: 'images/videos/hongdae_v3.jpg', vertical: true, cat: 'song' },
   ];
 
   // ——— Render Video Cards ———
@@ -284,6 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.createElement('div');
     card.className = 'video-card';
     card.dataset.videoId = video.id;
+    card.dataset.cat = video.cat || 'always';
     if (video.vertical) card.dataset.vertical = '1';
     const thumbSrc = video.thumb || `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`;
     card.innerHTML = `
@@ -306,21 +308,19 @@ document.addEventListener('DOMContentLoaded', () => {
     videoSlider.appendChild(card);
   });
 
-  // ——— Fetch YouTube Titles ———
-  // We'll try to set the titles from oEmbed (no API key needed)
-  videos.filter((v) => v.id).forEach(async (video) => {
-    try {
-      const resp = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${video.id}`);
-      const data = await resp.json();
-      if (data.title) {
-        const card = videoSlider.querySelector(`[data-video-id="${video.id}"]`);
-        if (card) {
-          card.querySelector('.video-title').textContent = data.title;
-        }
-      }
-    } catch (e) {
-      // silently fail, keep default title
-    }
+  // ——— Video Category Filter ———
+  const videoFilters = document.getElementById('videoFilters');
+
+  videoFilters.addEventListener('click', (e) => {
+    const btn = e.target.closest('.video-filter');
+    if (!btn) return;
+    videoFilters.querySelectorAll('.video-filter').forEach((b) => b.classList.toggle('active', b === btn));
+    const filter = btn.dataset.filter;
+    videoSlider.querySelectorAll('.video-card').forEach((card) => {
+      const show = filter === 'all' || card.dataset.cat === filter || card.dataset.cat === 'always';
+      card.style.display = show ? '' : 'none';
+    });
+    videoSlider.scrollTo({ left: 0, behavior: 'auto' });
   });
 
   // ——— Video Slider Navigation ———

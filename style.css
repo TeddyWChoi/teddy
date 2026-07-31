@@ -1235,6 +1235,40 @@ a.note-card:hover {
   background: var(--color-bg-elevated);
 }
 
+.video-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  max-width: var(--max-width);
+  margin: 0 auto 1.75rem;
+}
+
+.video-filter {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1.3rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.video-filter:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.video-filter.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
 .video-slider-wrapper {
   max-width: var(--max-width);
   margin: 0 auto;

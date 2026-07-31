@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -292,7 +292,13 @@
     <div class="section-header fade-in">
       <span class="section-label">Showreel</span>
       <h2 class="section-title">영상</h2>
-      <p class="section-subtitle">프로필 · 연기 영상 · 공연 실황</p>
+    </div>
+
+    <div class="video-filters fade-in" id="videoFilters">
+      <button class="video-filter active" data-filter="all">전체</button>
+      <button class="video-filter" data-filter="performance">무대</button>
+      <button class="video-filter" data-filter="song">음악</button>
+      <button class="video-filter" data-filter="monologue">모놀로그</button>
     </div>
 
     <div class="video-slider-wrapper">
@@ -386,6 +392,6 @@
     <p class="footer-text">© 2026 Teddy Choi. 늦게 시작했지만, 오래 하고 싶은 배우.</p>
   </footer>
 
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>
