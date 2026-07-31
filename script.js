@@ -185,28 +185,64 @@ document.addEventListener('DOMContentLoaded', () => {
     const track = card.querySelector('.insta-track');
     const counter = card.querySelector('.insta-counter');
     const dotEls = card.querySelectorAll('.insta-dot');
+    const total = work.images.length;
     let index = 0;
 
-    function goTo(i) {
-      index = Math.max(0, Math.min(i, work.images.length - 1));
+    function goTo(i, wrap) {
+      index = wrap ? (i + total) % total : Math.max(0, Math.min(i, total - 1));
       track.style.transform = `translateX(-${index * 100}%)`;
-      if (counter) counter.textContent = `${index + 1}/${work.images.length}`;
+      if (counter) counter.textContent = `${index + 1}/${total}`;
       dotEls.forEach((d, di) => d.classList.toggle('active', di === index));
+    }
+
+    // 자동 슬라이드: 카드가 화면에 보이는 동안 3.5초마다 다음 사진으로
+    // (IntersectionObserver는 화면 밖 카드를 멈추는 보조 역할 — 기본은 재생)
+    let autoTimer = null;
+    let inView = true;
+
+    function startAuto() {
+      if (autoTimer || !inView || total < 2) return;
+      autoTimer = setInterval(() => goTo(index + 1, true), 3500);
+    }
+
+    function stopAuto() {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+
+    function resetAuto() {
+      stopAuto();
+      startAuto();
+    }
+
+    if (total > 1) {
+      const autoObserver = new IntersectionObserver((entries) => {
+        inView = entries[0].isIntersecting;
+        if (inView) startAuto();
+        else stopAuto();
+      }, { threshold: 0.4 });
+      autoObserver.observe(card);
+      startAuto();
+
+      card.addEventListener('mouseenter', stopAuto);
+      card.addEventListener('mouseleave', startAuto);
     }
 
     const prevBtn = card.querySelector('.insta-arrow.prev');
     const nextBtn = card.querySelector('.insta-arrow.next');
-    if (prevBtn) prevBtn.addEventListener('click', () => goTo(index - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => goTo(index + 1));
+    if (prevBtn) prevBtn.addEventListener('click', () => { goTo(index - 1); resetAuto(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { goTo(index + 1); resetAuto(); });
 
     // Swipe support (mobile)
     let startX = null;
-    track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; stopAuto(); }, { passive: true });
     track.addEventListener('touchend', (e) => {
-      if (startX === null) return;
-      const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
-      startX = null;
+      if (startX !== null) {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+        startX = null;
+      }
+      startAuto();
     }, { passive: true });
 
     // Double-tap style like (decorative)
