@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: '마지막 리허설',
       tag: '낭독극',
       meta: '부암아트홀 · 2026.07',
-      caption: '틔움 리딩 페스티벌 낭독극 〈마지막 리허설〉. 최청년 역. 목소리와 호흡만으로 쌓아 올린 무대였습니다.',
+      caption: '틔움 리딩 페스티벌 낭독극 〈마지막 리허설〉. 김청년 역. 목소리와 호흡만으로 쌓아 올린 무대였습니다.',
       hashtags: '#마지막리허설 #낭독극 #부암아트홀 #틔움리딩페스티벌 #배우최테디',
       images: [
         { src: 'images/works/last-rehearsal/rehearsal_01.jpg' },
