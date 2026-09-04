@@ -257,6 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const videos = [
     { id: '32RERk4sk5s', title: '최테디 배우프로필', cat: 'always' },
     { id: 'V0yeLhbxzK0', title: '독백 연기 ‘정답을 아는 자’', cat: 'monologue' },
+    { id: '43U26rmC4nU', title: '낭독극 〈마지막 리허설〉', cat: 'performance' },
     { id: '97eFPh6RAwE', title: '연극 〈처녀비행〉', cat: 'performance' },
     { id: 'vjDFHS9h16k', title: '춤극 〈민주의 물결〉 편집본', cat: 'performance' },
     { id: '1lYjtmGeOJs', title: '비와당신 (풀버전)', cat: 'song' },
