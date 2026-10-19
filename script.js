@@ -104,6 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'images/works/hongdae-live/hongdae_02.jpg' },
         { src: 'images/works/hongdae-live/hongdae_03.jpg' },
         { src: 'images/works/hongdae-live/hongdae_04.jpg' },
+        { src: 'images/videos/hongdae_v1.jpg', video: '3ZNDpqvuOs0' },
+        { src: 'images/videos/hongdae_v2.jpg', video: 'CSbxqIOsVBw' },
+        { src: 'images/videos/hongdae_v3.jpg', video: 'YSwKubSrC5Y' },
       ],
     },
     {
