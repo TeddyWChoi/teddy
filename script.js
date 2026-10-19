@@ -8,11 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
       slug: 'murder',
       title: '머더',
       tag: '연극',
-      meta: '대학로 소극장 (예정) · 2026.11',
-      caption: '창작연극 〈머더〉. 강식 역으로 준비 중입니다. 2026년 11월, 대학로에서 만나요.',
-      hashtags: '#머더 #창작연극 #대학로 #공연예정 #배우최테디',
+      meta: '대학로 코델아트홀 · 2026.11.14~15',
+      caption: '창작연극 〈머더〉. 강식 역으로 준비 중입니다. 11월 14~15일, 대학로 코델아트홀에서 만나요.',
+      hashtags: '#머더 #창작연극 #대학로 #코델아트홀 #배우최테디',
       images: [
-        { src: 'images/works/murder/murder_01.jpg' },
+        { src: 'images/works/murder/murder_01.jpg', fit: 'contain' },
+        { src: 'images/works/murder/murder_02.jpg', fit: 'contain' },
+        { src: 'images/works/murder/murder_03.jpg', fit: 'contain' },
+        { src: 'images/works/murder/murder_04.jpg', fit: 'contain' },
       ],
     },
     {
@@ -276,6 +279,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: '3ZNDpqvuOs0', title: '정기연주회 〈여명〉 쇼츠 1', thumb: 'images/videos/hongdae_v1.jpg', vertical: true, cat: 'song' },
     { id: 'CSbxqIOsVBw', title: '정기연주회 〈여명〉 쇼츠 2', thumb: 'images/videos/hongdae_v2.jpg', vertical: true, cat: 'song' },
     { id: 'YSwKubSrC5Y', title: '정기연주회 〈여명〉 쇼츠 3', thumb: 'images/videos/hongdae_v3.jpg', vertical: true, cat: 'song' },
+    { id: 'yExltE7xlZI', title: '바디 프로필 촬영 비하인드 1', vertical: true, cat: 'fitness' },
+    { id: 'kgn14G7A2G8', title: '바디 프로필 촬영 비하인드 2', vertical: true, cat: 'fitness' },
   ];
 
   // ——— Render Video Cards ———
