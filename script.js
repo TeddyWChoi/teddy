@@ -266,6 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: '1lYjtmGeOJs', title: '비와당신 (풀버전)', cat: 'song' },
     { id: '69J0dJs5JyE', title: '빵빵한내청춘 (풀버전)', cat: 'song' },
     { id: 'DfKUz75Na84', title: '사람이 꽃보다 아름다워 (풀버전)', cat: 'song' },
+    { id: 'GJvYv8WZPfk', title: '독백 연습 〈오이디푸스〉', cat: 'monologue' },
     { id: 'irnGozPnrBA', title: '독백 연기 ‘복수는 나의 것’', cat: 'monologue' },
     { id: '-Ipztn-Vzn8', title: '뮤지컬 〈위대한쇼맨〉 1', thumb: 'images/videos/showman_v1.jpg', vertical: true, cat: 'performance' },
     { id: 'iNCWBP-FvDs', title: '뮤지컬 〈위대한쇼맨〉 2', thumb: 'images/videos/showman_v2.jpg', vertical: true, cat: 'performance' },
