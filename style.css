@@ -988,6 +988,40 @@ a.note-card:hover {
   object-fit: contain;
 }
 
+/* 캐러셀 영상 슬라이드 재생 버튼 */
+.insta-slide {
+  position: relative;
+}
+
+.insta-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: all var(--transition-fast);
+}
+
+.insta-play svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+  margin-left: 3px;
+}
+
+.insta-slide-video:hover .insta-play {
+  background: rgba(200, 168, 110, 0.9);
+  border-color: var(--color-accent);
+}
+
 .insta-arrow {
   position: absolute;
   top: 50%;

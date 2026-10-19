@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'images/works/showman/showman_07.jpg', fit: 'contain' },
         { src: 'images/works/showman/showman_08.jpg' },
         { src: 'images/works/showman/showman_09.jpg' },
+        { src: 'images/videos/showman_v3.jpg', video: '-KqjyeiKjnE' },
       ],
     },
     {
@@ -116,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'images/works/busking/busking_01.jpg' },
         { src: 'images/works/busking/busking_02.jpg' },
         { src: 'images/works/busking/busking_03.jpg' },
+        { src: 'images/videos/busking_v1.jpg', video: 'cAMU9yv-Xt8' },
       ],
     },
     {
@@ -127,6 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
       hashtags: '#피트니스 #운동하는배우 #바디프로필준비중 #배우최테디',
       images: [
         { src: 'images/works/fitness/fitness_01.jpg' },
+        { src: 'https://i.ytimg.com/vi/yExltE7xlZI/oardefault.jpg', video: 'yExltE7xlZI' },
+        { src: 'https://i.ytimg.com/vi/kgn14G7A2G8/oardefault.jpg', video: 'kgn14G7A2G8' },
       ],
     },
   ];
@@ -140,9 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
     card.className = 'insta-card fade-in';
 
     const slides = work.images.map((img, i) => `
-      <div class="insta-slide">
-        <img src="${img.src}" alt="${work.title} 공연 사진 ${i + 1}" loading="lazy"
+      <div class="insta-slide${img.video ? ' insta-slide-video' : ''}"${img.video ? ` data-video="${img.video}"` : ''}>
+        <img src="${img.src}" alt="${work.title} ${img.video ? '영상' : '공연 사진'} ${i + 1}" loading="lazy"
              class="${img.fit === 'contain' ? 'fit-contain' : ''}" data-src="${img.src}">
+        ${img.video ? `<span class="insta-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>` : ''}
       </div>
     `).join('');
 
@@ -265,11 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: '1lYjtmGeOJs', title: '비와당신 (풀버전)', cat: 'song' },
     { id: 'GJvYv8WZPfk', title: '독백 〈오이디푸스〉', cat: 'monologue' },
     { id: '69J0dJs5JyE', title: '빵빵한내청춘 (풀버전)', cat: 'song' },
-    { id: '-KqjyeiKjnE', title: '뮤지컬 〈위대한쇼맨〉', thumb: 'images/videos/showman_v3.jpg', vertical: true, cat: 'performance' },
     { id: 'DfKUz75Na84', title: '사람이 꽃보다 아름다워 (풀버전)', cat: 'song' },
-    { id: 'cAMU9yv-Xt8', title: '버스킹 라이브', thumb: 'images/videos/busking_v1.jpg', vertical: true, cat: 'song' },
-    { id: 'yExltE7xlZI', title: '바디 프로필 촬영 비하인드 1', vertical: true, cat: 'fitness' },
-    { id: 'kgn14G7A2G8', title: '바디 프로필 촬영 비하인드 2', vertical: true, cat: 'fitness' },
   ];
 
   // ——— Render Video Cards ———
@@ -388,9 +389,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 작품 활동 피드 사진 클릭 시에도 라이트박스로 확대
+  // 작품 활동 피드: 영상 슬라이드는 재생 팝업, 사진은 라이트박스
   worksFeed.addEventListener('click', (e) => {
-    const img = e.target.closest('.insta-slide img');
+    const slide = e.target.closest('.insta-slide');
+    if (!slide) return;
+    if (slide.dataset.video) {
+      openVideoModal(slide.dataset.video, true);
+      return;
+    }
+    const img = slide.querySelector('img');
     if (img) {
       lightboxImg.src = img.dataset.src;
       lightbox.classList.add('active');
