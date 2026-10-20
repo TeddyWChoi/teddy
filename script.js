@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'images/works/showman/showman_04.jpg' },
         { src: 'images/works/showman/showman_05.jpg' },
         { src: 'images/works/showman/showman_06.jpg' },
-        { src: 'images/works/showman/showman_07.jpg', fit: 'contain' },
         { src: 'images/works/showman/showman_08.jpg' },
         { src: 'images/works/showman/showman_09.jpg' },
         { src: 'images/videos/showman_v1.jpg', video: '-Ipztn-Vzn8' },
