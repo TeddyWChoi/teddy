@@ -1,0 +1,38 @@
+name: Notion 연기 노트 자동 동기화
+
+on:
+  schedule:
+    - cron: "0 18 * * *"   # 매일 18:00 UTC = 한국시간 새벽 3시
+  workflow_dispatch: {}     # Actions 탭에서 수동 실행도 가능
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync notes from Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python scripts/notion_sync.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "notion-sync-bot"
+          git config user.email "actions@github.com"
+          if ! git diff --quiet; then
+            git add notes-data.js notes.html
+            git commit -m "자동 동기화: 노션 연기 노트 ($(date +%Y-%m-%d))"
+            git push
+          else
+            echo "변경 사항 없음"
+          fi
