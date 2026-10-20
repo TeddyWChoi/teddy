@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'images/works/showman/showman_07.jpg', fit: 'contain' },
         { src: 'images/works/showman/showman_08.jpg' },
         { src: 'images/works/showman/showman_09.jpg' },
+        { src: 'images/videos/showman_v1.jpg', video: '-Ipztn-Vzn8' },
+        { src: 'images/videos/showman_v2.jpg', video: 'iNCWBP-FvDs' },
         { src: 'images/videos/showman_v3.jpg', video: '-KqjyeiKjnE' },
       ],
     },
@@ -72,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'images/works/maiden-flight/maiden_04.jpg' },
         { src: 'images/works/maiden-flight/maiden_05.jpg' },
         { src: 'images/works/maiden-flight/maiden_06.jpg' },
+        { src: 'images/videos/maiden_v1.jpg', video: 'eJluQn76dAc' },
+        { src: 'images/videos/maiden_v2.jpg', video: 'QIk_zbrwEKA' },
       ],
     },
     {
@@ -90,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'images/works/democracy-wave/democracy_06.jpg' },
         { src: 'images/works/democracy-wave/democracy_07.jpg' },
         { src: 'images/works/democracy-wave/democracy_08.jpg' },
+        { src: 'images/videos/democracy_v1.jpg', video: 'dy-xvHwYo90' },
       ],
     },
     {
@@ -121,6 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'images/works/busking/busking_02.jpg' },
         { src: 'images/works/busking/busking_03.jpg' },
         { src: 'images/videos/busking_v1.jpg', video: 'cAMU9yv-Xt8' },
+        { src: 'images/videos/busking_v2.jpg', video: 'nZS97Y-7JzU' },
+        { src: 'images/videos/busking_v3.jpg', video: 'oyYpFwCnac0' },
       ],
     },
     {
