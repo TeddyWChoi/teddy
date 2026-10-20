@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.createElement('article');
     card.className = 'note-card';
     card.dataset.index = i;
+    card.dataset.cat = note.cat || 'acting';
     card.innerHTML = `
       <span class="note-date">${note.date}</span>
       <h3 class="note-title">${note.title}</h3>
@@ -17,6 +18,27 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     notesGrid.appendChild(card);
   });
+
+  // ——— 카테고리 탭 (액팅 수업 / 공연기획 수업) ———
+  const notesTabs = document.getElementById('notesTabs');
+  const notesPhilosophy = document.querySelector('.notes-philosophy');
+
+  function applyNotesTab(cat) {
+    notesGrid.querySelectorAll('.note-card').forEach((card) => {
+      card.style.display = card.dataset.cat === cat ? '' : 'none';
+    });
+    // 연기 철학 블록은 액팅 수업 탭에서만 표시
+    if (notesPhilosophy) notesPhilosophy.style.display = cat === 'acting' ? '' : 'none';
+  }
+
+  notesTabs.addEventListener('click', (e) => {
+    const btn = e.target.closest('.video-filter');
+    if (!btn) return;
+    notesTabs.querySelectorAll('.video-filter').forEach((b) => b.classList.toggle('active', b === btn));
+    applyNotesTab(btn.dataset.cat);
+  });
+
+  applyNotesTab('acting');
 
   // ——— Note Detail Modal ———
   const noteModal = document.getElementById('noteModal');
