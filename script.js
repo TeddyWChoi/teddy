@@ -267,6 +267,31 @@ document.addEventListener('DOMContentLoaded', () => {
     heart.addEventListener('click', () => heart.classList.toggle('liked'));
   });
 
+  // ——— Acting Notes Preview (메인 페이지: 최신 노트 3개 자동 표시) ———
+  const notesPreviewGrid = document.getElementById('notesPreviewGrid');
+  if (notesPreviewGrid && typeof NOTES_DATA !== 'undefined') {
+    const latest = NOTES_DATA
+      .filter((n) => (n.cat || 'acting') === 'acting' && n.date !== '부록')
+      .sort((a, b) => b.date.localeCompare(a.date))
+      .slice(0, 3);
+
+    latest.forEach((note, i) => {
+      const card = document.createElement('a');
+      card.href = 'notes.html';
+      card.className = 'note-card fade-in' + (i ? ` fade-in-delay-${i}` : '');
+      card.innerHTML = `
+        <span class="note-date">${note.date}</span>
+        <h3 class="note-title">${note.title}</h3>
+        <p class="note-summary">${note.summary}</p>
+        <span class="note-open">자세히 보기 →</span>
+      `;
+      notesPreviewGrid.appendChild(card);
+    });
+
+    const notesMoreLink = document.getElementById('notesMoreLink');
+    if (notesMoreLink) notesMoreLink.textContent = `연기 노트 전체 보기 (${NOTES_DATA.length}) →`;
+  }
+
   // ——— Video Data ———
   // vertical: true 인 항목은 세로(9:16) 영상 — 재생 팝업이 세로 비율로 열립니다.
   // thumb가 있으면 로컬 썸네일을, 없으면 YouTube 썸네일을 사용합니다.

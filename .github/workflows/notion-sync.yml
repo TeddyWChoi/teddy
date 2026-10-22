@@ -30,7 +30,7 @@ jobs:
           git config user.name "notion-sync-bot"
           git config user.email "actions@github.com"
           if ! git diff --quiet; then
-            git add notes-data.js notes.html
+            git add notes-data.js notes.html index.html
             git commit -m "자동 동기화: 노션 연기 노트 ($(date +%Y-%m-%d))"
             git push
           else

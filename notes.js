@@ -4,7 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ——— Render Note Cards ———
   const notesGrid = document.getElementById('notesGrid');
 
-  NOTES_DATA.forEach((note, i) => {
+  // 최신 노트가 위로 오도록 역순 정렬 (부록은 맨 뒤)
+  const ordered = NOTES_DATA.map((note, i) => ({ note, i }))
+    .sort((a, b) => {
+      const ad = a.note.date === '부록' ? '0000' : a.note.date;
+      const bd = b.note.date === '부록' ? '0000' : b.note.date;
+      return bd.localeCompare(ad);
+    });
+
+  ordered.forEach(({ note, i }) => {
     const card = document.createElement('article');
     card.className = 'note-card';
     card.dataset.index = i;

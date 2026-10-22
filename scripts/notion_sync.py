@@ -234,11 +234,12 @@ def main():
         json.dump(notes, f, ensure_ascii=False, indent=2)
         f.write(";\n")
 
-    # notes.html 캐시 버전 올리기
-    nh = open(NOTES_HTML_PATH, encoding="utf-8").read()
-    nh2 = re.sub(r"notes-data\.js\?v=(\d+)", lambda m: f"notes-data.js?v={int(m.group(1)) + 1}", nh)
-    if nh2 != nh:
-        open(NOTES_HTML_PATH, "w", encoding="utf-8").write(nh2)
+    # notes-data.js를 참조하는 페이지들의 캐시 버전 올리기
+    for page in (NOTES_HTML_PATH, os.path.join(ROOT, "index.html")):
+        src = open(page, encoding="utf-8").read()
+        bumped = re.sub(r"notes-data\.js\?v=(\d+)", lambda m: f"notes-data.js?v={int(m.group(1)) + 1}", src)
+        if bumped != src:
+            open(page, "w", encoding="utf-8").write(bumped)
 
     print(f"완료: {len(added)}개 노트 추가 (총 {len(notes)}개)")
 
