@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       slug: 'last-rehearsal',
       title: '마지막 리허설',
-      tag: '낭독극',
+      tag: '연극',
       meta: '부암아트홀 · 2026.07',
-      caption: '틔움 리딩 페스티벌 낭독극 〈마지막 리허설〉. 김청년 역. 목소리와 호흡만으로 쌓아 올린 무대였습니다.',
-      hashtags: '#마지막리허설 #낭독극 #부암아트홀 #틔움리딩페스티벌 #배우최테디',
+      caption: '틔움 리딩 페스티벌 연극 〈마지막 리허설〉. 김청년 역. 목소리와 호흡으로 쌓아 올린 무대였습니다.',
+      hashtags: '#마지막리허설 #연극 #부암아트홀 #틔움리딩페스티벌 #배우최테디',
       images: [
         { src: 'images/works/last-rehearsal/rehearsal_01.jpg' },
         { src: 'images/works/last-rehearsal/rehearsal_02.jpg' },
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // cat: performance(공연) | song(노래) | monologue(독백) | always(모든 필터에 표시)
   const videos = [
     { id: '32RERk4sk5s', title: '최테디 배우프로필', cat: 'always' },
-    { id: '43U26rmC4nU', title: '낭독극 〈마지막 리허설〉', cat: 'performance' },
+    { id: '43U26rmC4nU', title: '연극 〈마지막 리허설〉', cat: 'performance' },
     { id: '97eFPh6RAwE', title: '연극 〈처녀비행〉', cat: 'performance' },
     { id: 'vjDFHS9h16k', title: '춤극 〈민주의 물결〉 편집본', cat: 'performance' },
     { id: '1lYjtmGeOJs', title: '비와당신 (풀버전)', cat: 'song' },
