@@ -5,6 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // 이미지: images/works/<slug>/ 폴더. fit: 'contain'은 크롭하면 안 되는 컷(포스터·가로 사진)에 지정.
   const works = [
     {
+      slug: 'seagull',
+      title: '갈매기',
+      tag: '연극',
+      meta: '대학로 소극장 (예정) · 2027.03',
+      caption: '안톤 체호프 〈갈매기〉. 뜨레플레프 역으로 준비합니다. 무언가가 되고 싶은 사람들의 이야기 — 2027년 3월, 대학로에서 만나요.',
+      hashtags: '#갈매기 #TheSeagull #체호프 #연극 #공연예정 #배우최테디',
+      images: [
+        { src: 'images/works/seagull/seagull_01.jpg', fit: 'contain' },
+      ],
+    },
+    {
       slug: 'murder',
       title: '머더',
       tag: '연극',
