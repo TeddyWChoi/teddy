@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: '머더',
       tag: '연극',
       meta: '대학로 코델아트홀 · 2026.11.14~15',
-      caption: '창작연극 〈머더〉, 강식 역. "나는 오늘, 사람을 죽였다" — 무거운 질문을 안고 무대에 섰습니다. 함께해주신 모든 분께 감사드립니다.',
+      caption: '창작연극 〈머더〉, 강식 역. 5분이 넘는 솔로 독백과 자살 연기 — 쉽지 않은 도전이었지만, 큰 실수 없이 잘 마쳤습니다. 함께해주신 모든 분께 감사드립니다.',
       hashtags: '#머더 #창작연극 #대학로 #코델아트홀 #배우최테디',
       images: [
         { src: 'images/works/murder/murder_01.jpg', fit: 'contain' },
