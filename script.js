@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
       caption: '뮤지컬 프로젝트 공연 〈위대한쇼맨〉. 어린 바넘, 찰스 역으로 무대에 섰습니다. 함께 만들어서 더 빛났던 무대.',
       hashtags: '#위대한쇼맨 #뮤지컬 #북아현아트홀 #배우최테디',
       images: [
-        { src: 'images/works/showman/showman_01.jpg' },
         { src: 'images/works/showman/showman_02.jpg' },
+        { src: 'images/works/showman/showman_01.jpg' },
         { src: 'images/works/showman/showman_03.jpg' },
         { src: 'images/works/showman/showman_04.jpg' },
         { src: 'images/works/showman/showman_05.jpg' },
