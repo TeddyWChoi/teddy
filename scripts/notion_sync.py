@@ -36,6 +36,52 @@ SOURCES = [
 # 수업 노트가 아닌 하위 페이지 (제목에 포함되면 제외)
 SKIP_KEYWORDS = ["협업 제안", "뉴스 읽기", "시낭송", "희곡 분석"]
 
+# 사이트에서 의도적으로 뺀 노트 (다시 추가하지 않음) — (cat, date)
+SKIP_ENTRIES = {
+    ("production", "2026.10.21"),  # 액팅 노트와 중복이라 제거함
+}
+
+# h4 소제목에 아래 키워드가 들어가면 그 섹션 전체 삭제 (운영/일정성 내용)
+DROP_SECTION_KEYWORDS = [
+    "일정", "과제", "모집", "극단 운영", "다음 시간", "다음 주", "준비물",
+    "공지", "수업 목표", "발표 순서", "발표 일정", "실습 안내", "참고 자료",
+    "링크", "향후", "복사",
+]
+
+# 3인칭/회의록 말투 → 1인칭 노트체
+FIRST_PERSON_REPLACEMENTS = [
+    ("테디(참석자 2)", "나"), ("선생님(참석자 1)", "선생님"),
+    ("참석자 1", "선생님"), ("참석자 2", "나"),
+    ("테디 님의", "나의"), ("테디 님", "나"), ("테디 배우님", "나"),
+    ("테디의", "나의"), ("테디는", "나는"), ("테디가", "내가"), ("테디", "나"),
+]
+
+
+def clean_body(body_html):
+    """자동 동기화 본문 정리: 운영성 섹션 삭제, 1인칭 전환, 찌꺼기 제거."""
+    # h4 기준으로 섹션 분리 (첫 조각은 인트로)
+    pieces = re.split(r"(<h4>.*?</h4>)", body_html)
+    out, skip = [], False
+    for piece in pieces:
+        if piece.startswith("<h4>"):
+            heading = re.sub(r"<[^>]+>", "", piece)
+            skip = any(k in heading for k in DROP_SECTION_KEYWORDS)
+            if skip:
+                continue
+        if not skip:
+            out.append(piece)
+    cleaned = "".join(out)
+    for old, new in FIRST_PERSON_REPLACEMENTS:
+        cleaned = cleaned.replace(old, new)
+    # PDF 인용 찌꺼기 (예: "04_공연기획_관객에 대한 이해.pdf+ 3") 와 URL 제거
+    cleaned = re.sub(r"\d+_[^<>]*?\.pdf\+?\s*\d*", "", cleaned)  # "04_..._제목.pdf+ 3" 형태
+    cleaned = re.sub(r"[\w가-힣()\[\]_\-·]+\.pdf\+?\s*\d*", "", cleaned)  # 공백 없는 파일명
+    cleaned = re.sub(r"https?://\S+", "", cleaned)
+    # 빈 태그 정리
+    cleaned = re.sub(r"<(p|li|blockquote|h4)>\s*</\1>", "", cleaned)
+    cleaned = re.sub(r"<ul>\s*</ul>", "", cleaned)
+    return cleaned.strip()
+
 DATE_RE = re.compile(r"^(\d{1,2})\s*[/월]\s*(\d{1,2})일?\s*[-–—.:]?\s*(.*)$")
 
 
@@ -196,10 +242,10 @@ def main():
             if not parsed:
                 continue
             note_date, title = parsed
-            if (cat, note_date) in existing_keys:
+            if (cat, note_date) in existing_keys or (cat, note_date) in SKIP_ENTRIES:
                 continue
             print(f"새 노트 발견: [{cat}] {note_date} {title}")
-            body = blocks_to_html(list_children(block["id"]))
+            body = clean_body(blocks_to_html(list_children(block["id"])))
             if not body:
                 print(f"  → 본문이 비어 있어 건너뜀")
                 continue
