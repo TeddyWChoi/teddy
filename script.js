@@ -132,9 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
       caption: '거리에서 부르는 노래. 버스킹은 관객과 가장 가까워지는 무대입니다. 오늘도 꾸준히, 한 곡씩.',
       hashtags: '#버스킹 #보컬 #거리공연 #배우최테디',
       images: [
+        { src: 'images/works/busking/busking_03.jpg' },
         { src: 'images/works/busking/busking_01.jpg' },
         { src: 'images/works/busking/busking_02.jpg' },
-        { src: 'images/works/busking/busking_03.jpg' },
         { src: 'images/videos/busking_v1.jpg', video: 'cAMU9yv-Xt8' },
         { src: 'images/videos/busking_v2.jpg', video: 'nZS97Y-7JzU' },
         { src: 'images/videos/busking_v3.jpg', video: 'oyYpFwCnac0' },
