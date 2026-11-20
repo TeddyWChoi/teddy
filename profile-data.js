@@ -33,7 +33,7 @@ const PROFILE_DATA = {
     { date: "2026.07", title: "연극 〈마지막 리허설〉", venue: "부암아트홀", role: "김청년 역" },
     { date: "2026.06", title: "뮤지컬 프로젝트 공연 〈위대한쇼맨〉", venue: "북아현 아트홀", role: "어린 바넘, 찰스 역" },
     { date: "2026.05", title: "정기연주회 〈여명〉", venue: "홍대 베짱이홀", role: "보컬·기타", group: "공연", music: true },
-    { date: "2026", title: "물결버스킹", venue: "거리 공연", role: "보컬·기타", group: "공연", music: true },
+    { date: "2025", title: "〈물결버스킹〉", venue: "거리 공연", role: "보컬", group: "공연", music: true },
     { date: "2025.12", title: "연극 〈처녀비행〉", venue: "연극집단 귀인", role: "배우1, 잭앤더슨 역" },
     { date: "2025.08", title: "도슨트 공연 〈민주의 물결〉", venue: "남영동 민주화 운동 기념관", role: "단체 춤극, 연기, 안무" },
     { date: "2025.06", title: "자전적 독백극 〈그림자 상담소〉", venue: "호원아트홀", role: "자전적 1인극 — 연출·대본·연기", group: "연극" }
