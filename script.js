@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
       images: [
         { src: 'images/works/daily/daily_01.jpg' },
         { src: 'images/works/daily/daily_02.jpg' },
+        { src: 'images/works/daily/daily_03.jpg' },
       ],
     },
   ];
