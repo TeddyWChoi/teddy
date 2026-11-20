@@ -230,7 +230,7 @@
   </div>
   </div>
 
-  <script src="profile-data.js?v=7"></script>
+  <script src="profile-data.js?v=8"></script>
   <script>
     (function () {
       const D = PROFILE_DATA;
@@ -242,8 +242,8 @@
       document.getElementById("infoEmail").textContent = D.email;
       document.getElementById("infoInsta").textContent = D.instagram;
       document.getElementById("infoEdu").innerHTML =
-        esc(D.education[0]) + "<br>" + esc(D.education[1]) +
-        '<span class="sub">' + esc(D.education[2]) + "</span>";
+        D.education.slice(0, -1).map(esc).join("<br>") +
+        '<span class="sub">' + esc(D.education[D.education.length - 1]) + "</span>";
       document.getElementById("infoSkills").innerHTML =
         D.skills.map(s => esc(s.name)).join(", ") +
         '<span class="sub">' + esc(D.skills[0].detail) + " / " + esc(D.skills[2].detail) + "</span>";

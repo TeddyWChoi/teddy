@@ -17,8 +17,10 @@ const PROFILE_DATA = {
   siteLabel: "teddywchoi.github.io/teddy",
   siteUrl: "https://teddywchoi.github.io/teddy/",
   education: [
-    "홍익대 국제디자인전문대학원(IDAS) 디자인 경영 (재학)",
-    "홍익대 문화예술경영대학원 교차 수강 — 공연기획·극장 경영",
+    "홍익대 국제디자인전문대학원(IDAS)",
+    "디자인 경영 (재학)",
+    "홍익대 문화예술경영대학원 교차 수강",
+    "공연기획·극장 경영",
     "계원예술대학교 멀티미디어 디자인 (졸업)"
   ],
   skills: [
