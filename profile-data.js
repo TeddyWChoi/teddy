@@ -25,7 +25,7 @@ const PROFILE_DATA = {
     { icon: "🎤", name: "보컬", detail: "실용음악 레슨 2년 · 버스킹 · 공연 경험" },
     { icon: "🎸", name: "기타 연주", detail: "고등학교 밴드부 · 직장인 밴드 · 찬양팀 반주" },
     { icon: "🥊", name: "복싱", detail: "전국생활체육복싱대회 입상" },
-    { icon: "🏋️", name: "피트니스", detail: "헬스 · 수영 · 클라이밍" }
+    { icon: "🏋️", name: "헬스", detail: "취미 — 꾸준한 몸 관리" }
   ],
   career: [
     { date: "2027.03 (예정)", title: "연극 〈갈매기〉", venue: "대학로 소극장 (예정)", role: "뜨레플레프 역" },
