@@ -166,9 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
       caption: '무대 밖의 일상. 오늘도 연습 가는 길입니다.',
       hashtags: '#일상 #셀카 #배우일상 #배우최테디',
       images: [
-        { src: 'images/works/daily/daily_01.jpg' },
-        { src: 'images/works/daily/daily_02.jpg' },
-        { src: 'images/works/daily/daily_03.jpg' },
+        { src: 'images/works/daily/daily_01.jpg', pos: 'center top' },
+        { src: 'images/works/daily/daily_02.jpg', pos: 'center top' },
+        { src: 'images/works/daily/daily_03.jpg', pos: 'center top' },
       ],
     },
   ];
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = work.images.map((img, i) => `
       <div class="insta-slide${img.video ? ' insta-slide-video' : ''}"${img.video ? ` data-video="${img.video}"` : ''}>
         <img src="${img.src}" alt="${work.title} ${img.video ? '영상' : '공연 사진'} ${i + 1}" loading="lazy"
-             class="${img.fit === 'contain' ? 'fit-contain' : ''}" data-src="${img.src}">
+             class="${img.fit === 'contain' ? 'fit-contain' : ''}" data-src="${img.src}"${img.pos ? ` style="object-position: ${img.pos};"` : ''}>
         ${img.video ? `<span class="insta-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>` : ''}
       </div>
     `).join('');
