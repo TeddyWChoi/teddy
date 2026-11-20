@@ -8,7 +8,7 @@ const PROFILE_DATA = {
   tagline: "어떤 역할이든, 내 인생의 주연처럼 —<br>작품을 단단하게 받쳐주는 배우",
   closing: "유명해지기보다, 나이가 들어서도 계속 무대 위에 서 있는 배우.",
   birth: "1985년 12월 5일",
-  bodySpec: "165cm / 57kg",
+  bodySpec: "165cm / 59kg",
   phone: "010.4170.1279",
   phoneHref: "tel:01041701279",
   email: "teddy.w.choi@gmail.com",
