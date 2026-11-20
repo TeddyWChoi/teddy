@@ -289,6 +289,36 @@
       fitZoom();
       window.addEventListener("resize", fitZoom);
 
+      /* html2canvas가 object-fit: cover를 제대로 못 그리므로,
+         캡처 전에 각 사진을 화면에 보이는 crop 그대로 캔버스에 구워 교체한다 */
+      function bakeCoverImages(root) {
+        const baked = [];
+        root.querySelectorAll("img").forEach((img) => {
+          const cs = getComputedStyle(img);
+          if (cs.objectFit !== "cover") return;
+          if (!img.complete || !img.naturalWidth) return;
+          const w = img.clientWidth, h = img.clientHeight;
+          if (!w || !h) return;
+          const scale = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+          const drawW = img.naturalWidth * scale, drawH = img.naturalHeight * scale;
+          const pos = cs.objectPosition.split(" ");
+          const px = parseFloat(pos[0]) / 100, py = parseFloat(pos[1] || "50%") / 100;
+          const dx = (w - drawW) * (pos[0].includes("%") ? px : 0.5);
+          const dy = (h - drawH) * (pos[1] && pos[1].includes("%") ? py : 0.5);
+          const c = document.createElement("canvas");
+          c.width = w * 2; c.height = h * 2;
+          const ctx = c.getContext("2d");
+          ctx.drawImage(img, dx * 2, dy * 2, drawW * 2, drawH * 2);
+          baked.push({ img, src: img.src, fit: img.style.objectFit });
+          img.src = c.toDataURL("image/jpeg", 0.92);
+          img.style.objectFit = "fill";
+        });
+        return baked;
+      }
+      function restoreBaked(baked) {
+        baked.forEach(({ img, src, fit }) => { img.src = src; img.style.objectFit = fit; });
+      }
+
       /* ===== PDF 다운로드 (페이지별 캡처 → A4 가로 3장) ===== */
       const btn = document.getElementById("pdfBtn");
       btn.addEventListener("click", async () => {
@@ -300,7 +330,10 @@
         zoomWrap.style.zoom = 1;
         const sheets = document.getElementById("sheets");
         sheets.classList.add("capturing");
+        let baked = [];
         try {
+          baked = bakeCoverImages(sheets);
+          await new Promise((r) => setTimeout(r, 150));
           const { jsPDF } = window.jspdf;
           const pdf = new jsPDF({ unit: "px", format: [1123, 794], orientation: "landscape", hotfixes: ["px_scaling"] });
           const pages = sheets.querySelectorAll(".page");
@@ -315,6 +348,7 @@
         } catch (e) {
           window.print();
         } finally {
+          restoreBaked(baked);
           sheets.classList.remove("capturing");
           zoomWrap.style.zoom = prevZoom;
           btn.disabled = false;
