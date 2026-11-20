@@ -24,7 +24,7 @@ const PROFILE_DATA = {
   skills: [
     { icon: "🎤", name: "보컬", detail: "실용음악 레슨 2년 · 버스킹 · 공연 경험" },
     { icon: "🎸", name: "기타 연주", detail: "고등학교 밴드부 · 직장인 밴드 · 찬양팀 반주" },
-    { icon: "🥊", name: "복싱", detail: "전국생활체육복싱대회 은메달" },
+    { icon: "🥊", name: "복싱", detail: "전국생활체육복싱대회 입상" },
     { icon: "🏋️", name: "피트니스", detail: "헬스 · 수영 · 클라이밍" }
   ],
   career: [

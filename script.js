@@ -489,6 +489,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
+  // data-lightbox 속성이 있는 요소 클릭 시 라이트박스 (예: 복싱 메달 증거 사진)
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-lightbox]');
+    if (el) {
+      lightboxImg.src = el.dataset.lightbox;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
   lightboxClose.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
