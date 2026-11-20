@@ -158,6 +158,18 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'https://i.ytimg.com/vi/kgn14G7A2G8/oardefault.jpg', video: 'kgn14G7A2G8' },
       ],
     },
+    {
+      slug: 'daily',
+      title: '일상',
+      tag: '셀카',
+      meta: '일상 · 셀카',
+      caption: '무대 밖의 일상. 오늘도 연습 가는 길입니다.',
+      hashtags: '#일상 #셀카 #배우일상 #배우최테디',
+      images: [
+        { src: 'images/works/daily/daily_01.jpg' },
+        { src: 'images/works/daily/daily_02.jpg' },
+      ],
+    },
   ];
 
   // ——— Render Works Feed ———
