@@ -283,6 +283,23 @@ document.addEventListener('DOMContentLoaded', () => {
     heart.addEventListener('click', () => heart.classList.toggle('liked'));
   });
 
+  // ——— Career Timeline (profile-data.js 기준 자동 렌더링 — 배우 프로필 PDF와 공유) ———
+  const careerTimeline = document.getElementById('careerTimeline');
+  if (careerTimeline && typeof PROFILE_DATA !== 'undefined') {
+    PROFILE_DATA.career.forEach((c, i) => {
+      const item = document.createElement('div');
+      const delay = Math.max(0, Math.min(3, i - 3));
+      item.className = 'career-item fade-in' + (delay ? ` fade-in-delay-${delay}` : '');
+      item.innerHTML = `
+        <span class="career-date">${c.date}</span>
+        <h3 class="career-title">${c.title.replace(/</g, '&lt;').replace(/〈/g, '&lt;').replace(/〉/g, '&gt;')}</h3>
+        <p class="career-venue">${c.venue}</p>
+        <p class="career-role">${c.role}</p>
+      `;
+      careerTimeline.appendChild(item);
+    });
+  }
+
   // ——— Acting Notes Preview (메인 페이지: 최신 노트 3개 자동 표시) ———
   const notesPreviewGrid = document.getElementById('notesPreviewGrid');
   if (notesPreviewGrid && typeof NOTES_DATA !== 'undefined') {

@@ -95,6 +95,10 @@
             <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
             <span>@teddy.w.choi</span>
           </a>
+          <a href="profile.html" target="_blank" rel="noopener" class="hero-contact-item" style="text-decoration:none;">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            <span>배우 프로필 보기</span>
+          </a>
         </div>
       </div>
     </div>
@@ -152,50 +156,8 @@
       <h2 class="section-title">연기 경력</h2>
     </div>
 
-    <div class="career-timeline">
-      <div class="career-item fade-in">
-        <span class="career-date">2027.03 (예정)</span>
-        <h3 class="career-title">연극 &lt;갈매기&gt;</h3>
-        <p class="career-venue">대학로 소극장 (예정)</p>
-        <p class="career-role">뜨레플레프 역</p>
-      </div>
-      <div class="career-item fade-in">
-        <span class="career-date">2026.11.14~15</span>
-        <h3 class="career-title">창작연극 &lt;머더&gt;</h3>
-        <p class="career-venue">대학로 코델아트홀</p>
-        <p class="career-role">강식 역</p>
-      </div>
-      <div class="career-item fade-in">
-        <span class="career-date">2026.07</span>
-        <h3 class="career-title">연극 &lt;마지막 리허설&gt;</h3>
-        <p class="career-venue">부암아트홀</p>
-        <p class="career-role">김청년 역</p>
-      </div>
-      <div class="career-item fade-in">
-        <span class="career-date">2026.06</span>
-        <h3 class="career-title">뮤지컬 프로젝트 공연 &lt;위대한쇼맨&gt;</h3>
-        <p class="career-venue">북아현 아트홀</p>
-        <p class="career-role">어린 바넘, 찰스 역</p>
-      </div>
-      <div class="career-item fade-in fade-in-delay-1">
-        <span class="career-date">2025.12</span>
-        <h3 class="career-title">연극 &lt;처녀비행&gt;</h3>
-        <p class="career-venue">연극집단 귀인</p>
-        <p class="career-role">배우1, 잭앤더슨 역</p>
-      </div>
-      <div class="career-item fade-in fade-in-delay-2">
-        <span class="career-date">2025.08</span>
-        <h3 class="career-title">도슨트 공연 &lt;민주의 물결&gt;</h3>
-        <p class="career-venue">남영동 민주화 운동 기념관</p>
-        <p class="career-role">단체 춤극, 연기, 안무</p>
-      </div>
-      <div class="career-item fade-in fade-in-delay-3">
-        <span class="career-date">2025.06</span>
-        <h3 class="career-title">자전적 독백극 &lt;그림자 상담소&gt;</h3>
-        <p class="career-venue">호원아트홀</p>
-        <p class="career-role">자전적 1인극, 20분 연출·대본·연기</p>
-      </div>
-    </div>
+    <!-- 경력 항목은 profile-data.js(PROFILE_DATA.career)에서 자동 렌더링 -->
+    <div class="career-timeline" id="careerTimeline"></div>
   </section>
 
   <!-- ===== Skills Section ===== -->
@@ -372,6 +334,10 @@
           <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
           @teddy.w.choi
         </a>
+        <a href="profile.html" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+          배우 프로필 보기
+        </a>
       </div>
     </div>
   </section>
@@ -382,6 +348,7 @@
   </footer>
 
   <script src="notes-data.js?v=8"></script>
-  <script src="script.js?v=33"></script>
+  <script src="profile-data.js?v=1"></script>
+  <script src="script.js?v=34"></script>
 </body>
 </html>
