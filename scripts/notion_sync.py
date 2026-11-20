@@ -265,11 +265,11 @@ def main():
         print("새 노트 없음 — 변경 사항이 없습니다.")
         return
 
-    # 삽입: acting은 '부록' 앞에 날짜순으로, production은 맨 뒤에 날짜순으로
+    # 삽입: acting은 '메모' 앞에 날짜순으로, production은 맨 뒤에 날짜순으로
     for entry in sorted(added, key=lambda e: e["date"]):
         if entry["cat"] == "acting":
             idx = next((i for i, n in enumerate(notes)
-                        if n.get("cat") == "acting" and n["date"] == "부록"), len(notes))
+                        if n.get("cat") == "acting" and n["date"] == "메모"), len(notes))
             notes.insert(idx, entry)
         else:
             notes.append(entry)

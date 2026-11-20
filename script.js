@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const notesPreviewGrid = document.getElementById('notesPreviewGrid');
   if (notesPreviewGrid && typeof NOTES_DATA !== 'undefined') {
     const latest = NOTES_DATA
-      .filter((n) => (n.cat || 'acting') === 'acting' && n.date !== '부록')
+      .filter((n) => (n.cat || 'acting') === 'acting' && n.date !== '메모')
       .sort((a, b) => b.date.localeCompare(a.date))
       .slice(0, 3);
 
