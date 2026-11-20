@@ -7,25 +7,20 @@
   <meta name="description" content="배우 최테디 프로필 — 연기 경력, 특기, 연락처">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0b0e;
-      --bg-card: #141418;
-      --line: rgba(255, 255, 255, 0.09);
-      --ink: #f2f1f5;
-      --ink-sub: #a8a8b6;
-      --ink-dim: #70707e;
-      --gold: #c8a86e;
-      --gold-light: #e3c694;
-      --gold-dark: #a88c4e;
-      --serif: 'Noto Serif KR', serif;
+      --paper: #ffffff;
+      --ink: #141416;
+      --ink-sub: #5c5c64;
+      --ink-dim: #9b9ba2;
+      --line: #ececef;
       --sans: 'Noto Sans KR', -apple-system, sans-serif;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     body {
-      background: #1b1b20;
+      background: #ebebee;
       font-family: var(--sans);
       color: var(--ink);
       -webkit-font-smoothing: antialiased;
@@ -36,165 +31,127 @@
       position: sticky; top: 0; z-index: 50;
       display: flex; align-items: center; justify-content: space-between;
       gap: 12px; flex-wrap: wrap;
-      padding: 14px 22px;
-      background: rgba(11, 11, 14, 0.92);
+      padding: 13px 22px;
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
-    .toolbar-title { font-family: var(--serif); font-size: 1rem; letter-spacing: 0.06em; }
-    .toolbar-title em { font-style: normal; color: var(--gold); }
-    .toolbar-actions { display: flex; gap: 10px; }
+    .toolbar-title { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.02em; }
+    .toolbar-actions { display: flex; gap: 9px; }
     .tb-btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 9px 18px; border-radius: 999px;
-      font-family: var(--sans); font-size: 0.85rem; font-weight: 500;
-      letter-spacing: 0.04em; cursor: pointer; text-decoration: none;
-      transition: all 0.2s ease; border: 1px solid var(--line);
+      font-family: var(--sans); font-size: 0.84rem; font-weight: 500;
+      letter-spacing: 0.02em; cursor: pointer; text-decoration: none;
+      transition: all 0.2s ease; border: 1px solid #d9d9df;
       color: var(--ink-sub); background: transparent;
     }
-    .tb-btn:hover { border-color: var(--gold); color: var(--gold); }
-    .tb-btn.primary {
-      background: var(--gold); border-color: var(--gold); color: #141414; font-weight: 700;
-    }
-    .tb-btn.primary:hover { background: var(--gold-light); border-color: var(--gold-light); color: #141414; }
+    .tb-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .tb-btn.primary { background: var(--ink); border-color: var(--ink); color: #fff; font-weight: 600; }
+    .tb-btn.primary:hover { background: #000; }
     .tb-btn.primary[disabled] { opacity: 0.55; cursor: progress; }
     .tb-btn svg { width: 15px; height: 15px; fill: currentColor; }
 
-    /* ===== 페이지 공통 ===== */
+    /* ===== 페이지 공통 (A4 가로) ===== */
     .sheets-zoom { padding: 34px 16px 70px; }
-    .sheets { width: 794px; margin: 0 auto; }
+    .sheets { width: 1123px; margin: 0 auto; }
     .page {
-      width: 794px; height: 1123px; overflow: hidden; position: relative;
-      background: var(--bg);
-      margin: 0 auto 34px;
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+      width: 1123px; height: 794px; overflow: hidden; position: relative;
+      background: var(--paper);
+      margin: 0 auto 30px;
+      box-shadow: 0 10px 40px rgba(30, 30, 40, 0.13);
       page-break-after: always; break-after: page;
-      display: flex; flex-direction: column;
     }
     .page:last-child { margin-bottom: 0; }
-    /* PDF 캡처 중: 페이지 간격·그림자 제거 (한 페이지 = PDF 한 장) */
     .sheets.capturing .page { margin: 0; box-shadow: none; }
 
-    .page-head {
-      display: flex; align-items: baseline; justify-content: space-between;
-      padding: 44px 56px 0;
+    .page-mark {
+      position: absolute; bottom: 24px; left: 64px; right: 64px;
+      display: flex; justify-content: space-between;
+      font-size: 0.6rem; color: #c2c2c8; letter-spacing: 0.12em;
     }
-    .page-label {
-      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.34em;
-      text-transform: uppercase; color: var(--gold);
-    }
-    .page-name { font-family: var(--serif); font-size: 0.78rem; color: var(--ink-dim); letter-spacing: 0.14em; }
-    .page-title { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; margin-top: 10px; }
-    .page-foot {
-      margin-top: auto;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 56px 34px; font-size: 0.68rem; color: var(--ink-dim); letter-spacing: 0.08em;
-    }
-    .page-foot .gold { color: var(--gold-dark); }
 
     /* ===== PAGE 1 — 커버 ===== */
-    .cover { flex-direction: row; }
-    .cover-photo { width: 46%; position: relative; overflow: hidden; }
-    .cover-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .cover-photo::after {
-      content: ""; position: absolute; inset: 0;
-      background: linear-gradient(to right, transparent 72%, var(--bg) 100%),
-                  linear-gradient(to top, rgba(11,11,14,0.45), transparent 30%);
+    .cover { display: flex; height: 100%; }
+    .cover-left {
+      width: 45%; height: 100%; flex-shrink: 0;
+      display: flex; flex-direction: column;
+      padding: 56px 56px 64px 64px;
     }
-    .cover-body { width: 54%; display: flex; flex-direction: column; padding: 64px 52px 40px 44px; }
-    .cover-label { font-size: 0.7rem; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; }
-    .cover-name { font-family: var(--serif); font-size: 3.6rem; font-weight: 900; line-height: 1.1; margin-top: 18px; }
-    .cover-name-en { font-family: var(--serif); font-size: 1.05rem; color: var(--ink-sub); letter-spacing: 0.3em; margin-top: 8px; }
-    .cover-divider { width: 54px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin: 26px 0 20px; }
-    .cover-tagline { font-family: var(--serif); font-size: 0.95rem; line-height: 1.75; color: var(--ink-sub); }
+    .qr-wrap { width: 88px; text-align: center; }
+    .qr-box { width: 88px; height: 88px; }
+    .qr-box img, .qr-box canvas { width: 88px !important; height: 88px !important; }
+    .qr-label { display: block; margin-top: 8px; font-size: 0.58rem; letter-spacing: 0.22em; color: var(--ink-dim); }
 
-    .cover-info { margin-top: 34px; display: flex; flex-direction: column; gap: 13px; }
-    .ci-row { display: flex; gap: 16px; font-size: 0.82rem; line-height: 1.6; }
-    .ci-label { width: 74px; flex-shrink: 0; color: var(--gold); font-weight: 500; letter-spacing: 0.08em; }
-    .ci-value { color: var(--ink); }
-    .ci-value .sub { display: block; color: var(--ink-dim); font-size: 0.76rem; }
+    .cover-name-block { margin-top: auto; }
+    .cover-name { font-size: 2.1rem; font-weight: 900; letter-spacing: 0.01em; }
+    .cover-birth { font-size: 0.88rem; color: var(--ink-dim); margin-top: 8px; }
+    .cover-tagline { font-size: 0.8rem; color: var(--ink-sub); margin-top: 14px; line-height: 1.7; }
 
-    .cover-contact {
-      margin-top: auto; border-top: 1px solid var(--line); padding-top: 22px;
-      display: flex; flex-direction: column; gap: 9px;
-    }
-    .cc-item { display: flex; align-items: center; gap: 10px; font-size: 0.84rem; color: var(--ink); letter-spacing: 0.03em; }
-    .cc-item svg { width: 14px; height: 14px; fill: var(--gold); flex-shrink: 0; }
-    .cc-site { margin-top: 10px; font-size: 0.72rem; color: var(--ink-dim); letter-spacing: 0.06em; }
-    .cc-site strong { color: var(--gold-dark); font-weight: 500; }
+    .cover-rows { margin-top: auto; display: flex; flex-direction: column; gap: 13px; }
+    .cv-row { display: flex; gap: 18px; font-size: 0.84rem; line-height: 1.65; }
+    .cv-label { width: 96px; flex-shrink: 0; font-weight: 700; letter-spacing: 0.02em; }
+    .cv-value { color: #333338; }
+    .cv-value .sub { display: block; color: var(--ink-dim); font-size: 0.76rem; }
+
+    .cover-right { flex: 1; height: 100%; }
+    .cover-right img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 
     /* ===== PAGE 2 — 경력 ===== */
-    .career-list { padding: 30px 56px 0; display: flex; flex-direction: column; }
-    .cr-item {
-      display: flex; gap: 26px; padding: 15px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .cr-item:last-child { border-bottom: none; }
-    .cr-date { width: 112px; flex-shrink: 0; font-size: 0.74rem; color: var(--gold); letter-spacing: 0.04em; padding-top: 3px; }
-    .cr-body { flex: 1; }
-    .cr-title { font-family: var(--serif); font-size: 1.02rem; font-weight: 700; }
-    .cr-meta { font-size: 0.76rem; color: var(--ink-sub); margin-top: 4px; }
-    .cr-meta .dot { margin: 0 7px; color: var(--ink-dim); }
-    .cr-role { color: var(--gold-light); }
+    .career-page { display: flex; height: 100%; padding: 52px 64px 56px; gap: 52px; }
+    .career-photo-col { width: 36%; flex-shrink: 0; display: flex; flex-direction: column; }
+    .career-photo-col .main-photo { flex: 1; min-height: 0; }
+    .career-photo-col img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; display: block; }
+    .photo-cap { font-size: 0.62rem; color: var(--ink-dim); letter-spacing: 0.06em; margin-top: 7px; }
 
-    .skills-band { padding: 26px 56px 0; }
-    .skills-band-title {
-      font-size: 0.68rem; letter-spacing: 0.34em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 16px;
-    }
-    .skills-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .sk-card {
-      background: var(--bg-card); border: 1px solid var(--line);
-      padding: 14px 12px; text-align: center;
-    }
-    .sk-icon { font-size: 1.15rem; }
-    .sk-name { font-family: var(--serif); font-size: 0.84rem; font-weight: 700; margin-top: 7px; }
-    .sk-detail { font-size: 0.64rem; color: var(--ink-sub); line-height: 1.55; margin-top: 5px; }
+    .career-col { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+    .credit-group { display: flex; gap: 26px; }
+    .credit-group + .credit-group { margin-top: 26px; }
+    .cg-label { width: 64px; flex-shrink: 0; font-size: 0.84rem; font-weight: 700; padding-top: 2px; }
+    .cg-list { flex: 1; }
+    .cg-item { display: flex; gap: 12px; align-items: baseline; font-size: 0.82rem; line-height: 2.05; }
+    .cg-year { color: var(--ink-dim); font-size: 0.74rem; width: 26px; flex-shrink: 0; }
+    .cg-title { font-weight: 700; }
+    .cg-role { color: var(--ink-sub); font-size: 0.76rem; }
 
-    .photo-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; padding: 26px 56px 0; }
-    .photo-strip figure { position: relative; height: 212px; overflow: hidden; background: var(--bg-card); }
-    .photo-strip img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .photo-strip figcaption {
-      position: absolute; left: 0; right: 0; bottom: 0;
-      padding: 18px 10px 7px; font-size: 0.62rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.88);
-      background: linear-gradient(to top, rgba(0,0,0,0.72), transparent);
-    }
+    .career-photos-bottom { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-top: 28px; }
+    .career-photos-bottom figure { height: 218px; overflow: hidden; }
+    .career-photos-bottom img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    img.pos-top { object-position: center 10%; }
 
-    /* ===== PAGE 3 — 무대 사진 ===== */
+    /* ===== PAGE 3 — 사진 ===== */
+    .stage-page { height: 100%; padding: 52px 64px 58px; display: flex; flex-direction: column; }
     .stage-grid {
-      padding: 30px 56px 0;
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: 262px; gap: 11px;
+      flex: 1; min-height: 0;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr 1fr; gap: 12px;
     }
-    .stage-grid figure { position: relative; overflow: hidden; background: var(--bg-card); }
+    .stage-grid figure { display: flex; flex-direction: column; min-height: 0; }
     .stage-grid figure.tall { grid-row: span 2; }
+    .stage-grid .imgwrap { flex: 1; min-height: 0; overflow: hidden; background: #f4f4f6; }
     .stage-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .stage-grid figcaption {
-      position: absolute; left: 0; right: 0; bottom: 0;
-      padding: 20px 11px 8px; font-size: 0.64rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.9);
-      background: linear-gradient(to top, rgba(0,0,0,0.74), transparent);
+    .stage-grid figcaption { padding-top: 6px; font-size: 0.6rem; color: var(--ink-dim); letter-spacing: 0.05em; }
+    .stage-foot {
+      padding-top: 24px; text-align: center;
+      font-size: 0.72rem; color: var(--ink-sub); letter-spacing: 0.04em;
     }
-    .stage-closing {
-      padding: 30px 56px 0; text-align: center;
-      font-family: var(--serif); font-size: 0.95rem; line-height: 1.8; color: var(--ink-sub);
-    }
-    .stage-closing em { font-style: normal; color: var(--gold); }
+    .stage-foot .sep { margin: 0 10px; color: #d4d4da; }
 
-    /* ===== 인쇄 ===== */
-    @page { size: A4; margin: 0; }
+    /* ===== 인쇄 (A4 가로) ===== */
+    @page { size: A4 landscape; margin: 0; }
     @media print {
-      body { background: var(--bg); }
+      body { background: var(--paper); }
       .toolbar { display: none; }
       .sheets-zoom { padding: 0; zoom: 1 !important; }
       .sheets { width: auto; }
-      .page { width: 210mm; height: 296.6mm; margin: 0; box-shadow: none; }
+      .page { width: 296.6mm; height: 209.6mm; margin: 0; box-shadow: none; }
     }
   </style>
 </head>
 <body>
 
   <div class="toolbar">
-    <span class="toolbar-title"><em>최테디</em> 배우 프로필</span>
+    <span class="toolbar-title">최테디 — 배우 프로필</span>
     <div class="toolbar-actions">
       <a class="tb-btn" href="index.html">← 포트폴리오 사이트</a>
       <button class="tb-btn primary" id="pdfBtn" type="button">
@@ -208,89 +165,66 @@
   <div class="sheets" id="sheets">
 
     <!-- ===== PAGE 1 — 커버 ===== -->
-    <section class="page cover">
-      <div class="cover-photo">
-        <img src="images/profile_main.jpeg" alt="배우 최테디 프로필 사진">
-      </div>
-      <div class="cover-body">
-        <span class="cover-label">Actor Profile</span>
-        <h1 class="cover-name">최테디</h1>
-        <p class="cover-name-en">TEDDY&nbsp;CHOI</p>
-        <div class="cover-divider"></div>
-        <p class="cover-tagline" id="coverTagline"></p>
+    <section class="page">
+      <div class="cover">
+        <div class="cover-left">
+          <div class="qr-wrap">
+            <div class="qr-box" id="qrBox"></div>
+            <span class="qr-label">PORTFOLIO</span>
+          </div>
 
-        <div class="cover-info">
-          <div class="ci-row"><span class="ci-label">생년월일</span><span class="ci-value" id="infoBirth"></span></div>
-          <div class="ci-row"><span class="ci-label">키 / 몸무게</span><span class="ci-value" id="infoBody"></span></div>
-          <div class="ci-row"><span class="ci-label">학력</span><span class="ci-value" id="infoEdu"></span></div>
+          <div class="cover-name-block">
+            <h1 class="cover-name">최테디 <span style="font-weight:300; font-size:1.1rem; color:var(--ink-dim); letter-spacing:0.14em;">Teddy Choi</span></h1>
+            <p class="cover-birth" id="infoBirthBody"></p>
+            <p class="cover-tagline" id="coverTagline"></p>
+          </div>
+
+          <div class="cover-rows">
+            <div class="cv-row"><span class="cv-label">연락처</span><span class="cv-value" id="infoPhone"></span></div>
+            <div class="cv-row"><span class="cv-label">이메일</span><span class="cv-value" id="infoEmail"></span></div>
+            <div class="cv-row"><span class="cv-label">인스타그램</span><span class="cv-value" id="infoInsta"></span></div>
+            <div class="cv-row"><span class="cv-label">학력</span><span class="cv-value" id="infoEdu"></span></div>
+            <div class="cv-row"><span class="cv-label">특기 · 취미</span><span class="cv-value" id="infoSkills"></span></div>
+          </div>
         </div>
-
-        <div class="cover-contact">
-          <div class="cc-item">
-            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            <span id="infoPhone"></span>
-          </div>
-          <div class="cc-item">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            <span id="infoEmail"></span>
-          </div>
-          <div class="cc-item">
-            <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
-            <span id="infoInsta"></span>
-          </div>
-          <p class="cc-site">포트폴리오 <strong id="infoSite"></strong></p>
+        <div class="cover-right">
+          <img src="images/profile_main.jpeg" alt="배우 최테디 프로필 사진">
         </div>
       </div>
     </section>
 
     <!-- ===== PAGE 2 — 연기 경력 ===== -->
     <section class="page">
-      <div class="page-head">
-        <div>
-          <span class="page-label">Career</span>
-          <h2 class="page-title">연기 경력</h2>
+      <div class="career-page">
+        <div class="career-photo-col">
+          <figure class="main-photo"><img src="images/works/murder/murder_05.jpg" alt="창작연극 머더 커튼콜"></figure>
+          <p class="photo-cap">창작연극 〈머더〉 커튼콜 · 강식 역</p>
         </div>
-        <span class="page-name">TEDDY CHOI</span>
+        <div class="career-col">
+          <div id="creditGroups"></div>
+          <div class="career-photos-bottom">
+            <figure><img src="images/works/last-rehearsal/rehearsal_03.jpg" alt="연극 마지막 리허설"></figure>
+            <figure><img src="images/musical_costume2.jpeg" alt="뮤지컬 위대한쇼맨" style="object-position: center 32%;"></figure>
+          </div>
+        </div>
       </div>
-
-      <div class="career-list" id="careerList"></div>
-
-      <div class="skills-band">
-        <p class="skills-band-title">Skills &amp; Talents</p>
-        <div class="skills-row" id="skillsRow"></div>
-      </div>
-
-      <div class="photo-strip">
-        <figure><img src="images/works/murder/murder_05.jpg" alt="창작연극 머더 커튼콜"><figcaption>창작연극 〈머더〉 · 강식 역</figcaption></figure>
-        <figure><img src="images/works/last-rehearsal/rehearsal_03.jpg" alt="연극 마지막 리허설 무대"><figcaption>연극 〈마지막 리허설〉 · 김청년 역</figcaption></figure>
-        <figure><img src="images/musical_costume.jpeg" alt="뮤지컬 위대한쇼맨 의상"><figcaption>뮤지컬 〈위대한쇼맨〉 · 찰스 역</figcaption></figure>
-      </div>
-
-      <div class="page-foot"><span class="gold">최테디 — 배우 프로필</span><span>2 / 3</span></div>
+      <div class="page-mark"><span>TEDDY CHOI — ACTOR PROFILE</span><span>2 / 3</span></div>
     </section>
 
-    <!-- ===== PAGE 3 — 무대 위의 순간 ===== -->
+    <!-- ===== PAGE 3 — 무대 사진 ===== -->
     <section class="page">
-      <div class="page-head">
-        <div>
-          <span class="page-label">On Stage</span>
-          <h2 class="page-title">무대 위의 순간들</h2>
+      <div class="stage-page">
+        <div class="stage-grid">
+          <figure class="tall"><div class="imgwrap"><img src="images/works/murder/murder_06.jpg" alt="머더 커튼콜"></div><figcaption>연극 〈머더〉 커튼콜</figcaption></figure>
+          <figure><div class="imgwrap"><img src="images/stage_monologue.jpeg" alt="그림자 상담소"></div><figcaption>〈그림자 상담소〉 1인극</figcaption></figure>
+          <figure class="tall"><div class="imgwrap"><img src="images/works/fitness/fitness_02.jpg" alt="바디 프로필"></div><figcaption>바디 프로필</figcaption></figure>
+          <figure><div class="imgwrap"><img src="images/portrait_dark.jpeg" alt="프로필 촬영"></div><figcaption>프로필 촬영</figcaption></figure>
+          <figure><div class="imgwrap"><img src="images/stage_performance1.jpeg" alt="민주의 물결"></div><figcaption>도슨트 공연 〈민주의 물결〉</figcaption></figure>
+          <figure><div class="imgwrap"><img src="images/guitar_performance.jpeg" alt="버스킹"></div><figcaption>버스킹 · 보컬 &amp; 기타</figcaption></figure>
         </div>
-        <span class="page-name">TEDDY CHOI</span>
+        <p class="stage-foot" id="stageFoot"></p>
       </div>
-
-      <div class="stage-grid">
-        <figure class="tall"><img src="images/works/murder/murder_06.jpg" alt="머더 커튼콜"><figcaption>〈머더〉 커튼콜</figcaption></figure>
-        <figure><img src="images/stage_monologue.jpeg" alt="그림자 상담소 독백"><figcaption>〈그림자 상담소〉 1인극</figcaption></figure>
-        <figure class="tall"><img src="images/works/fitness/fitness_02.jpg" alt="바디 프로필"><figcaption>바디 프로필 · 2026</figcaption></figure>
-        <figure><img src="images/stage_performance1.jpeg" alt="민주의 물결 공연"><figcaption>〈민주의 물결〉</figcaption></figure>
-        <figure><img src="images/guitar_performance.jpeg" alt="버스킹 기타 연주"><figcaption>버스킹 · 보컬 &amp; 기타</figcaption></figure>
-        <figure><img src="images/portrait_dark.jpeg" alt="프로필 촬영"><figcaption>프로필 촬영</figcaption></figure>
-      </div>
-
-      <p class="stage-closing" id="stageClosing"></p>
-
-      <div class="page-foot"><span class="gold" id="footContact"></span><span>3 / 3</span></div>
+      <div class="page-mark"><span>TEDDY CHOI — ACTOR PROFILE</span><span>3 / 3</span></div>
     </section>
 
   </div>
@@ -302,46 +236,62 @@
       const D = PROFILE_DATA;
       const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+      document.getElementById("infoBirthBody").textContent = D.birth + " · " + D.bodySpec;
       document.getElementById("coverTagline").innerHTML = D.tagline;
-      document.getElementById("infoBirth").textContent = D.birth;
-      document.getElementById("infoBody").textContent = D.bodySpec;
-      document.getElementById("infoEdu").innerHTML =
-        esc(D.education[0]) + "<br>" + esc(D.education[1]) +
-        '<span class="sub">' + esc(D.education[2]) + "</span>";
       document.getElementById("infoPhone").textContent = D.phone;
       document.getElementById("infoEmail").textContent = D.email;
       document.getElementById("infoInsta").textContent = D.instagram;
-      document.getElementById("infoSite").textContent = D.siteLabel;
-      document.getElementById("stageClosing").innerHTML =
-        "“" + D.closing.replace("배우.", "<em>배우</em>.”");
-      document.getElementById("footContact").textContent = D.phone + " · " + D.email;
+      document.getElementById("infoEdu").innerHTML =
+        esc(D.education[0]) + "<br>" + esc(D.education[1]) +
+        '<span class="sub">' + esc(D.education[2]) + "</span>";
+      document.getElementById("infoSkills").innerHTML =
+        D.skills.map(s => esc(s.name)).join(", ") +
+        '<span class="sub">' + esc(D.skills[0].detail) + " / " + esc(D.skills[2].detail) + "</span>";
+      document.getElementById("stageFoot").innerHTML =
+        [D.phone, D.email, D.instagram, D.siteLabel].map(esc).join('<span class="sep">|</span>');
 
-      document.getElementById("careerList").innerHTML = D.career.map(c => `
-        <div class="cr-item">
-          <span class="cr-date">${esc(c.date)}</span>
-          <div class="cr-body">
-            <h3 class="cr-title">${esc(c.title)}</h3>
-            <p class="cr-meta">${esc(c.venue)}<span class="dot">·</span><span class="cr-role">${esc(c.role)}</span></p>
-          </div>
-        </div>`).join("");
+      /* 경력을 연극 / 뮤지컬 / 공연으로 분류해 렌더링 */
+      const groupOf = c =>
+        /뮤지컬/.test(c.title) ? "뮤지컬" :
+        /(도슨트|춤극|독백극)/.test(c.title) ? "공연" : "연극";
+      const shortTitle = t => t.replace(/^[^〈]*〈/, "〈").replace(/〉[^〉]*$/, "〉");
+      const yearOf = d => d.slice(2, 4) + "'";
+      const groups = { "연극": [], "뮤지컬": [], "공연": [] };
+      D.career.forEach(c => groups[groupOf(c)].push(c));
+      document.getElementById("creditGroups").innerHTML =
+        Object.entries(groups).filter(([, list]) => list.length).map(([label, list]) => `
+          <div class="credit-group">
+            <span class="cg-label">${label}</span>
+            <div class="cg-list">
+              ${list.map(c => `
+                <div class="cg-item">
+                  <span class="cg-year">${yearOf(c.date)}</span>
+                  <span class="cg-title">${esc(shortTitle(c.title))}</span>
+                  <span class="cg-role">${esc(c.role)}${/예정/.test(c.date) ? " (예정)" : ""}</span>
+                </div>`).join("")}
+            </div>
+          </div>`).join("");
 
-      document.getElementById("skillsRow").innerHTML = D.skills.map(s => `
-        <div class="sk-card">
-          <div class="sk-icon">${s.icon}</div>
-          <div class="sk-name">${esc(s.name)}</div>
-          <div class="sk-detail">${esc(s.detail)}</div>
-        </div>`).join("");
+      /* QR — 포트폴리오 사이트 (라이브러리 로드 후 생성) */
+      window.addEventListener("load", () => {
+        if (window.QRCode) {
+          new QRCode(document.getElementById("qrBox"), {
+            text: D.siteUrl, width: 88, height: 88,
+            colorDark: "#141416", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M
+          });
+        }
+      });
 
-      /* 작은 화면에서는 A4 페이지를 비율 유지한 채 축소 */
+      /* 작은 화면: 비율 유지 축소 */
       const zoomWrap = document.getElementById("sheetsZoom");
       function fitZoom() {
         const avail = Math.min(window.innerWidth, document.documentElement.clientWidth) - 24;
-        zoomWrap.style.zoom = avail < 794 ? (avail / 794) : 1;
+        zoomWrap.style.zoom = avail < 1123 ? (avail / 1123) : 1;
       }
       fitZoom();
       window.addEventListener("resize", fitZoom);
 
-      /* ===== PDF 다운로드 (페이지별 캡처 → A4 3장 합성) ===== */
+      /* ===== PDF 다운로드 (페이지별 캡처 → A4 가로 3장) ===== */
       const btn = document.getElementById("pdfBtn");
       btn.addEventListener("click", async () => {
         if (typeof html2canvas === "undefined" || !window.jspdf) { window.print(); return; }
@@ -354,14 +304,14 @@
         sheets.classList.add("capturing");
         try {
           const { jsPDF } = window.jspdf;
-          const pdf = new jsPDF({ unit: "px", format: [794, 1123], orientation: "portrait", hotfixes: ["px_scaling"] });
+          const pdf = new jsPDF({ unit: "px", format: [1123, 794], orientation: "landscape", hotfixes: ["px_scaling"] });
           const pages = sheets.querySelectorAll(".page");
           for (let i = 0; i < pages.length; i++) {
             const canvas = await html2canvas(pages[i], {
-              scale: 2, useCORS: true, backgroundColor: "#0b0b0e", scrollY: 0
+              scale: 2, useCORS: true, backgroundColor: "#ffffff", scrollY: 0
             });
-            if (i) pdf.addPage([794, 1123], "portrait");
-            pdf.addImage(canvas.toDataURL("image/jpeg", 0.93), "JPEG", 0, 0, 794, 1123);
+            if (i) pdf.addPage([1123, 794], "landscape");
+            pdf.addImage(canvas.toDataURL("image/jpeg", 0.93), "JPEG", 0, 0, 1123, 794);
           }
           pdf.save("최테디_배우프로필.pdf");
         } catch (e) {
@@ -375,6 +325,7 @@
       });
     })();
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 </body>
