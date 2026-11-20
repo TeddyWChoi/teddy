@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hashtags: '#마지막리허설 #연극 #부암아트홀 #틔움리딩페스티벌 #배우최테디',
       images: [
         { src: 'images/works/last-rehearsal/rehearsal_06.jpg' },
+        { src: 'images/works/last-rehearsal/rehearsal_11.jpg', fit: 'contain' },
         { src: 'images/works/last-rehearsal/rehearsal_02.jpg' },
         { src: 'images/works/last-rehearsal/rehearsal_03.jpg', fit: 'contain' },
         { src: 'images/works/last-rehearsal/rehearsal_04.jpg', fit: 'contain' },
