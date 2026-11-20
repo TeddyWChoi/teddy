@@ -300,7 +300,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ——— Career Timeline (profile-data.js 기준 자동 렌더링 — 배우 프로필 PDF와 공유) ———
   const careerTimeline = document.getElementById('careerTimeline');
   if (careerTimeline && typeof PROFILE_DATA !== 'undefined') {
-    PROFILE_DATA.career.forEach((c, i) => {
+    // 음악 공연(music: true)은 프로필 크레딧에만 — 연기 경력 타임라인에서는 제외
+    PROFILE_DATA.career.filter((c) => !c.music).forEach((c, i) => {
       const item = document.createElement('div');
       const delay = Math.max(0, Math.min(3, i - 3));
       item.className = 'career-item fade-in' + (delay ? ` fade-in-delay-${delay}` : '');

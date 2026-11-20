@@ -230,7 +230,7 @@
   </div>
   </div>
 
-  <script src="profile-data.js?v=5"></script>
+  <script src="profile-data.js?v=6"></script>
   <script>
     (function () {
       const D = PROFILE_DATA;
@@ -249,9 +249,9 @@
         '<span class="sub">' + esc(D.skills[0].detail) + " / " + esc(D.skills[2].detail) + "</span>";
 
       /* 경력을 연극 / 뮤지컬 / 공연으로 분류해 렌더링 */
-      const groupOf = c =>
-        /뮤지컬/.test(c.title) ? "뮤지컬" :
-        /(도슨트|춤극|독백극)/.test(c.title) ? "공연" : "연극";
+      const groupOf = c => c.group ||
+        (/뮤지컬/.test(c.title) ? "뮤지컬" :
+        /(도슨트|춤극)/.test(c.title) ? "공연" : "연극");
       const shortTitle = t => t.replace(/^[^〈]*〈/, "〈").replace(/〉[^〉]*$/, "〉");
       const yearOf = d => d.slice(2, 4) + "'";
       const groups = { "연극": [], "뮤지컬": [], "공연": [] };
