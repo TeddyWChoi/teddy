@@ -492,52 +492,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  const skillImagePreview = document.getElementById('skillImagePreview');
-  const skillImagePreviewImg = skillImagePreview.querySelector('img');
-  let previewCard = null;
-
-  function positionSkillPreview() {
-    if (!previewCard) return;
-    const cardRect = previewCard.getBoundingClientRect();
-    const previewRect = skillImagePreview.getBoundingClientRect();
-    const gap = 12;
-    let top = cardRect.top - previewRect.height - gap;
-    if (top < 12) top = Math.min(cardRect.bottom + gap, window.innerHeight - previewRect.height - 12);
-    const left = Math.max(12, Math.min(
-      cardRect.left + (cardRect.width - previewRect.width) / 2,
-      window.innerWidth - previewRect.width - 12
-    ));
-    skillImagePreview.style.left = `${left}px`;
-    skillImagePreview.style.top = `${top}px`;
-  }
-
-  function showSkillPreview(card) {
-    previewCard = card;
-    skillImagePreviewImg.src = card.dataset.lightbox;
-    skillImagePreview.classList.add('active');
-    requestAnimationFrame(positionSkillPreview);
-  }
-
-  function hideSkillPreview(card) {
-    if (card && previewCard !== card) return;
-    previewCard = null;
-    skillImagePreview.classList.remove('active');
-  }
-
-  skillImagePreviewImg.addEventListener('load', positionSkillPreview);
-  document.querySelectorAll('.skill-card-with-preview').forEach((card) => {
-    card.addEventListener('mouseenter', () => showSkillPreview(card));
-    card.addEventListener('mouseleave', () => hideSkillPreview(card));
-    card.addEventListener('focus', () => showSkillPreview(card));
-    card.addEventListener('blur', () => hideSkillPreview(card));
-  });
-  window.addEventListener('resize', positionSkillPreview);
-
   // data-lightbox 요소는 클릭 또는 키보드로 큰 이미지를 엽니다.
   document.addEventListener('click', (e) => {
     const el = e.target.closest('[data-lightbox]');
     if (el) {
-      hideSkillPreview();
       lightboxImg.src = el.dataset.lightbox;
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
