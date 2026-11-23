@@ -1590,7 +1590,7 @@ a.note-card:hover {
   z-index: 20;
   left: 50%;
   bottom: calc(100% + 0.75rem);
-  width: min(340px, calc(100vw - 2rem));
+  width: min(440px, calc(100vw - 2rem));
   padding: 0.45rem;
   border: 1px solid var(--color-border-hover);
   border-radius: var(--radius-md);
@@ -1606,7 +1606,7 @@ a.note-card:hover {
 .skill-card-preview img {
   display: block;
   width: 100%;
-  max-height: min(300px, calc(100vh - 2rem));
+  max-height: min(65vh, 560px);
   object-fit: contain;
   border-radius: calc(var(--radius-md) - 4px);
 }
