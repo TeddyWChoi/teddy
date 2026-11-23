@@ -512,7 +512,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function showSkillPreview(card) {
-    if (!window.matchMedia('(hover: hover)').matches && document.activeElement !== card) return;
     previewCard = card;
     skillImagePreviewImg.src = card.dataset.lightbox;
     skillImagePreview.classList.add('active');
