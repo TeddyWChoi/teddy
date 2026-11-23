@@ -1618,6 +1618,21 @@ a.note-card:hover {
   transform: translate(-50%, 0);
 }
 
+@media (min-width: 769px) {
+  .skills-grid .skill-card:nth-child(3) .skill-card-preview {
+    left: auto;
+    right: calc(100% + 0.75rem);
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+
+  .skills-grid .skill-card:nth-child(3):hover .skill-card-preview,
+  .skills-grid .skill-card:nth-child(3):focus-visible .skill-card-preview {
+    transform: translateY(-50%);
+  }
+}
+
 .skill-icon {
   font-size: 2rem;
   margin-bottom: 0.75rem;
